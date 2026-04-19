@@ -4,20 +4,26 @@
     box-sizing: border-box
 }
 
+:root {
+    --navBar-color: #131313c6;
+    --golden-color: #e7c075;
+    --golden-hover-color: #bb954f;
+    --golden-btn-text-color: #432f01;
+    --text-color: #a4a2a8;
+    --small-text-color: #b5aa9b;
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
+    background-color: #0a0a0a;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.09) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.09) 0%, transparent 40%);
 }
 
-:root {
-    --navBar-color: #131313;
-    --golden-color: #e7c075;
-    --golden-hover-color: #bb954f;
-    --golden-btn-text-color: #432f01; 
-    --text-color: #a4a2a8;
-}
 
 @font-face {
     font-family: mainFont;
@@ -70,7 +76,7 @@ body {
 }
 
 .sign {
-    display: flex;   
+    display: flex;
 }
 
 .nav-bar .sign-btn {
@@ -144,4 +150,3 @@ main {
     text-decoration: underline;
     text-underline-offset: 6px;
 }
-
