@@ -12,14 +12,18 @@
             overflow-y: visible;
         }
 
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            /* حط رابط الخريطة هنا */
             background-image: url(../assets/images/dark-map.jpg);
             background-size: 100%;
             background-attachment: scroll;
-            
+            min-height: 156vh;
+            background-repeat: no-repeat;
         }
     </style>
 </head>

@@ -1,8 +1,10 @@
-.nav-bar {
-    position: fixed;
-}
-
 .map-container iframe{
-    width: 80%;
-    height: 700px;
+    width: 70%;
+    height: 75vh;
+    border: none;
+}
+.map-container{
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
 }
