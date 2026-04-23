@@ -10,33 +10,37 @@
 
 #map-iframe {
     border: none;
-    width: 56%;
-    height: 85vh;
-    transition: 0.4s;
+    width: 54vw;
     border-radius: 15px;
+    height: 84vh;
+}
+
+#map-main {
+    display: flex;
+    justify-content: center;
+    transition: 0.4s;
 }
 
 #map-container {
-    display: flex;
-    justify-content: center;
-    background: none;
     margin-top: 10px;
+    margin-bottom: 3%;
+    transition: 0.5s;
 }
 
 #information-container {
-    position: relative;
-    top: 0;
-    right: -100%;
+    position: absolute;
+    right: 0;
+    top: -150vh;
+    width: fit-content;
+    height: 130vh;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    transition: 0.5s;
+    transition: 0.4s;
     background-color: #181818;
     align-items: center;
     padding: 0 50px;
     padding-top: 130px;
     padding-bottom: 200px;
-    height: 30vh;
 }
 
 #information-container .p1 {

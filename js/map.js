@@ -1,18 +1,17 @@
 function info() {
     let infoCnt = window.parent.document.getElementById("information-container");
-    let mapCnt = window.parent.document.getElementById("map-iframe");
-    let right = infoCnt.style.right;
-    let footer = window.parent.document.getElementById("map-footer");
-    if (right === "-100%") {
-        infoCnt.style.right = "0";
-        infoCnt.style.height = "130vh";
+    let mapCnt = window.parent.document.getElementById("map-container");
+    let main = window.parent.document.getElementById("map-main");
+    let styled = window.parent.getComputedStyle(infoCnt);
+    let top = styled.top;
+    if (top !== "0px") {
+        infoCnt.style.top = "0";
         mapCnt.style.marginRight = "20%";
-        mapCnt.style.marginBottom = "10%"
+        main.style.marginBottom = "90px";
     } else {
-        infoCnt.style.right = "-100%";
-        infoCnt.style.height = "30vh";
-        mapCnt.style.marginRight = "0"
-        mapCnt.style.marginBottom = "3%"
+        infoCnt.style.top = "-150vh";
+        mapCnt.style.marginRight = "0";
+        main.style.marginBottom = "0";
     }
 }
 
