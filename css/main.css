@@ -4,6 +4,11 @@
     box-sizing: border-box
 }
 
+::selection {
+    background-color: #c59f59c5;
+    color: #4e3700;
+}
+
 :root {
     --navBar-color: #131313;
     --golden-color: #e7c075;
@@ -32,7 +37,8 @@ body {
 
 
 .nav-bar {
-    position: fixed;
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,6 +51,7 @@ body {
     padding: 0 40px;
     opacity: 0.9;
     letter-spacing: 5px;
+    z-index: 100;
 }
 
 .nav-cnt {

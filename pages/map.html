@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Map</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/map.css">
 </head>
@@ -29,8 +28,42 @@
         </div>
     </nav>
     <main>
-        <div class="map-container">
-            <iframe src="map-iframe.html"></iframe>
+        <div id="map-main">
+            <div id="map-container">
+                <iframe src="map-iframe.html" id="map-iframe"></iframe>
+            </div>
+            <div id="information-container">
+                <p class="p1">Relic Focus</p>
+                <p class="p2">The Great<br>Pyramids of Giza</p>
+                <img src="../assets/images/Map-imgs/Pyramid-icon (2).png" id="pyr-img">
+                <div id="selected-info">
+                    <p>
+                        <label>ERA</label>
+                        <br>
+                        Old Kingdom
+                    </p>
+                    <p>
+                        <label>HEIGHT</label>
+                        <br>
+                        146.6m
+                    </p>
+                    <p>
+                        <label>PHARAOH</label>
+                        <br>
+                        khufu
+                    </p>
+                    <p>
+                        <label>STATE</label>
+                        <br>
+                        Preserved
+                    </p>
+                </div>
+                <p id="info-p">
+                    The oldest and largest of the three pyramids in the Giza
+                    pyramid complex, this architectural marvel remained the tallest
+                    man-made structure in the world for over 3,800 years.
+                </p>
+            </div>
         </div>
     </main>
     <footer class="footer">

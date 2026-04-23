@@ -19,16 +19,72 @@
         body {
             margin: 0;
             padding: 0;
-            background-image: url(../assets/images/dark-map.jpg);
-            background-size: 100%;
-            background-attachment: scroll;
-            min-height: 156vh;
-            background-repeat: no-repeat;
+            overflow: auto;
+        }
+
+        #iframe-container {
+            transform-origin: left top;
+            transition: 0.4s;       
+        }
+        
+        #map {
+            position: absolute;
+            width: 100%;
+        }
+
+        #pyramids {
+            position: absolute;
+            display: flex;
+            width: 7%;
+            filter: drop-shadow(0 0 10px #e7c075);
+            cursor: pointer;
+            margin-left: 45%;
+            margin-top: 18%;
+        }
+
+        #zoom-in {
+            background-color: #c5a059;
+            padding: 0 1.5vw;
+            border-radius: 20%;
+            border: none;
+            font-size: 5vw;
+            color: #4e3700;
+            cursor: pointer;
+        }
+
+        #zoom-out {
+            background-color: #c5a059;
+            padding: 0 2.1vw;
+            border-radius: 20%;
+            border: none;
+            font-size: 5vw;
+            color: #4e3700;
+            cursor: pointer;
+        }
+
+        #zoom-btn {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            gap: 3vh;
+            margin-left: 2%;
+            margin-top: 55%;
         }
     </style>
 </head>
 
 <body>
+    <div id="iframe-container">
+        <img src="../assets/images/Map-imgs/dark-map.jpg" id="map">
+        <div id="icons-container">
+            <img src="../assets/images/Map-imgs/pyramids.png" id="pyramids" onclick="info()">
+        </div>
+    </div>
+    <div id="zoom-btn">
+        <button id="zoom-in" onclick="zoomIn()">+</button>
+        <button id="zoom-out" onclick="zoomout()">-</button>
+    </div>
+    <script src="../js/map.js"></script>
 </body>
 
 </html>
