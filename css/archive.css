@@ -1,0 +1,78 @@
+:root {
+    --navBar-color: #131313;
+    --golden-color: #e7c075;
+    --golden-hover-color: #bb954f;
+    --golden-btn-text-color: #432f01;
+    --text-color: #a4a2a8;
+    --small-text-color: #b5aa9b;
+}
+@font-face {
+    font-family: mainFont;
+    src: url(../assets/Fonts/noto-serif.regular.ttf);
+}
+body{
+    display: flex;
+    text-transform: capitalize;
+    font-family: mainFont;
+}
+.archive{
+    margin: 1%;
+}
+img{
+    max-width: 100%;
+    object-fit: contain;
+    height: 15em;
+}
+i{
+    color: var(--golden-color);
+    font-size: large;
+}
+.museum{
+    border-bottom: 3px solid var(--text-color);
+    margin: 1%;
+}
+h1{
+    color: var(--golden-color);
+    text-align: center;
+    font-weight: unset;
+}
+h3{
+    color: var(--small-text-color);
+    text-align: right;
+    padding: 1.5%;
+    font-weight: unset;
+}
+h5{
+    color: var(--golden-color);
+    font-size: 12px;
+    margin-top: 10px;
+    font-weight: unset;
+}
+h2{
+    color: var(--text-color);
+    font-weight: unset;
+}
+h6{
+    color: var(--small-text-color);
+    font-weight: unset;
+}
+.img{
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 3%;
+    background-color: #353534;
+    max-width: 18em;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+.img:hover{
+    transform: scale(1.1);
+    
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+

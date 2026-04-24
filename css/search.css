@@ -87,6 +87,10 @@ main {
     max-width: 18em;
     padding: 10px;
     border-radius: 5px;
+    img{
+        display: flex;
+        justify-self: center;
+    }
 }
 
 .imgage-container {

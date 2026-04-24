@@ -1,0 +1,63 @@
+:root {
+    --navBar-color: #131313;
+    --golden-color: #e7c075;
+    --golden-hover-color: #bb954f;
+    --golden-btn-text-color: #432f01;
+    --text-color: #a4a2a8;
+    --small-text-color: #b5aa9b;
+}
+@font-face {
+    font-family: mainFont;
+    src: url(../assets/Fonts/noto-serif.regular.ttf);
+}
+body{
+    text-transform: capitalize;
+    font-family: mainFont;
+    display: flex;
+}
+.head,main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+}
+#profilePic{
+    width: 27%;
+    height: 27%;
+    border-radius: 3px;
+    margin: 1%;
+    border: 0.2px solid var(--golden-color);
+}
+h1{
+    color: var(--golden-color);
+}
+h4,h3{
+    color: var(--small-text-color);
+    font-weight: unset;
+}
+h3{
+    border-bottom: 2px solid var(--small-text-color);
+    padding: 2%;
+}
+.fav{
+    width: 50%;
+    margin: 4%;
+}
+hr{
+    background-color: var(--golden-color);
+    width: 30%;
+    margin: 3%;
+    font-weight: unset;
+}
+.btn{
+    width: 10%;
+    height: 5%;
+    background-color: var(--golden-color);
+    border-radius: 2px;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    font-size: 130%;
+}
