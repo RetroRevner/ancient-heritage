@@ -1,0 +1,146 @@
+@font-face {
+    font-family: mainFont;
+    src: url(../assets/Fonts/noto-serif.regular.ttf);
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.text{
+    flex: 1;
+    margin-left: 40px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.affinity{
+    width: 225px;
+}
+
+.affinity p{
+    color: #e7bf7593; 
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+.affinity h1{
+    margin-top: 25px;
+    display: flex;
+    color: #e7c075;
+    font-size: 60px;
+    font-family: mainFont;
+    font-weight: normal;
+    line-height: 0.9;
+}
+
+.explanation{
+    margin-top: 30px;
+    width: 380px;
+    height: 100px;
+}
+
+.explanation p{
+    color: #a4a2a8;
+    font-size: 17px;
+    word-spacing: 1px;
+}
+
+.head-contact{
+    color: #e7bf7593;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.main-contact{
+    color: #b5aa9b;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+li{
+    list-style-type: none;
+    border-left: 3px solid rgba(255, 255, 255, 0.15);
+    padding-left: 20px;
+}
+
+.form-box{
+    flex: 1;
+    margin-right: 40px;
+    margin-top: 60px;
+    margin-bottom: 70px;
+    background-color: #131313;
+    padding: 60px;
+    border-radius: 5px;
+}
+
+label{
+    color: #e7bf7593;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+input{
+    background-color: #353534;
+    height: 35px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.line{
+    display: flex;
+    gap: 20px; 
+    width: 100%;
+    padding-left: 20px;
+    margin-bottom: 35px;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+select{
+    background-color: #353534;
+    height: 35px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+}
+
+textarea{
+    background-color: #353534;
+    height: 100px;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+}
+
+.submit{
+    display: flex;
+    gap: 20px; 
+    width: 100%;
+}
+
+button{
+    position: relative;
+    padding: 8px 16px;
+    background-color: var(--golden-color);
+    border-radius: 12px;
+    color: var(--golden-btn-text-color);
+    font-size: 16px;
+    text-decoration: none;
+    letter-spacing: normal;
+    transition: 0.4s;
+}
+
+button:hover{
+    background-color: var(--golden-hover-color);
+    color: var(--golden-btn-text-color);
+}
