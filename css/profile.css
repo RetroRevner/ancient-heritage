@@ -54,12 +54,11 @@ hr{
     width: 10%;
     height: 5%;
     background-color: var(--golden-color);
-    border-radius: 8px;
+    border-radius: 2px;
     text-align: center;
-    transition: 0.15s ;
 }
 .btn:hover{
-    transform: scale(1.01);
+    transform: scale(1.1);
     box-shadow: 5px 5px 8px #000;
     border: 1px solid var(--golden-btn-text-color);
 }
@@ -69,49 +68,5 @@ a{
     font-size: 130%;
 }
 .fav{
-    justify-self: center;
-    img{
-        height: 100%;
-        width: 100%;
-    }
-    h2{
-        color: var(--golden-color);
-        font-weight: unset;
-    }
-    h5,h6{
-        color: var(--small-text-color);
-        font-weight: unset;
-    }
-    .container{
-        margin: 2%;
-        display: flex;
-        justify-self: center;
-        width: 90%;
-        height: 20%;
-        align-items: center;
-        gap: 5%;
-    }
-    .picture{
-        height: 130px;
-    }
-    .iconBox{
-        display: flex;
-        align-items: center;
-        font-size: 150%;
-        width: 5%;
-        gap: 2%;
-    }
-    .text{
-        display: flex;
-        width: 70%;
-        align-items: center;
-        gap: 7%;
-    }
-    .cardFooter{
-        display: flex; 
-        align-items: center;
-        width: 40%;
-        gap: 10%;
-    }
+    
 }
-

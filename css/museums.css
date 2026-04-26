@@ -109,23 +109,23 @@ body {
 }
 
 .card-container:nth-child(1) {
-    grid-column: 1 / 5; /* كبير */
+    grid-column: 1 / 5;
 }
 
 .card-container:nth-child(2) {
-    grid-column: 5 / 7; /* صغير */
+    grid-column: 5 / 7;
 }
 
 .card-container:nth-child(3) {
-    grid-column: 1 / 7; /* ياخد كله */
+    grid-column: 2 / 6;
 }
 
 .card-container:nth-child(4) {
-    grid-column: 5 / 7; /* عكس الأول (يمين) */
+    grid-column: 1 / 4;
 }
 
 .card-container:nth-child(5) {
-    grid-column: 1 / 5; /* عكس التاني (شمال) */
+    grid-column: 4 / 7;
 }
 
 video {
@@ -242,27 +242,27 @@ video:hover {
 
 .table-museum tbody #row1:hover {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
-        url("../assets/images/grand egy museum/photo_2026-04-25_16-12-06.jpg");
+        url("../../assets/images/grand egy museum/photo_2026-04-25_16-12-06.jpg");
 }
 
 .table-museum tbody #row2:hover {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
-        url("../assets/images/egy museum/cairo-museum.jpg");
+        url("../../assets/images/egy museum/cairo-museum.jpg");
 }
 
 .table-museum tbody #row3:hover {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
-        url("../assets/images/islamic art/museum_of_islamic_art,cairo.jpg");
+        url("../../assets/images/islamic art/museum_of_islamic_art,cairo.jpg");
 }
 
 .table-museum tbody #row4:hover {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
-        url("../assets/images/coptic museum/The Coptic Museum (1).jpg");
+        url("../../assets/images/coptic museum/The Coptic Museum (1).jpg");
 }
 
 .table-museum tbody #row5:hover {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
-        url("../assets/images/nmec/The National Museum of Egyptian Civilization, Egypt.jpg");
+        url("../../assets/images/nmec/The National Museum of Egyptian Civilization, Egypt.jpg");
 }
 
 .table-museum tbody tr:hover td,
