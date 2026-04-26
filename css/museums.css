@@ -109,23 +109,23 @@ body {
 }
 
 .card-container:nth-child(1) {
-    grid-column: 1 / 5;
+    grid-column: 1 / 5; /* كبير */
 }
 
 .card-container:nth-child(2) {
-    grid-column: 5 / 7;
+    grid-column: 5 / 7; /* صغير */
 }
 
 .card-container:nth-child(3) {
-    grid-column: 2 / 6;
+    grid-column: 1 / 7; /* ياخد كله */
 }
 
 .card-container:nth-child(4) {
-    grid-column: 1 / 4;
+    grid-column: 4 / 7; /* عكس الأول (يمين) */
 }
 
 .card-container:nth-child(5) {
-    grid-column: 4 / 7;
+    grid-column: 1 / 4; /* عكس التاني (شمال) */
 }
 
 video {
