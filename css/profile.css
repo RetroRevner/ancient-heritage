@@ -55,7 +55,7 @@ hr{
     width: 10%;
     height: 5%;
     background-color: var(--golden-color);
-    border-radius: 8px;
+    border-radius: 2px;
     text-align: center;
     transition: 0.15s ;
     margin: 1px;
