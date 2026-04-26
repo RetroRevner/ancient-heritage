@@ -31,7 +31,7 @@ body {
 }
 
 
-.nav-bar {
+/* .nav-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -102,7 +102,7 @@ body {
 
 .nav-bar .sign a.sign-btn.active {
     background-color: var(--golden-hover-color);
-}
+} */
 
 main {
     flex: 1;
