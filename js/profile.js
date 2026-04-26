@@ -1,9 +1,18 @@
 let storeData = localStorage.getItem("user")
 let userData = JSON.parse(storeData);
 
-document.getElementById("userName").innerText= userData.Name;
-document.getElementById("userEmail").innerText = userData.Email;
+if(userData.Name == undefined){
+    document.getElementById("userName").innerText= "Welcome Back!";
+    document.getElementById("userEmail").innerText = userData.Email;
+}else{
+    document.getElementById("userName").innerText= "Hello " + userData.Name;
+    document.getElementById("userEmail").innerText = userData.Email;
+}
 
+
+if(userData.Name == ""){
+    document.getElementById("userName").innerText= "Welcome Back";
+}
 
 
 
@@ -40,7 +49,7 @@ for(let j of artifactData){
     icon.onclick = () => {
         removeFromLocal("favorite", j.id);
         card.remove();
-        let remainingCards = document.querySelectorAll(".card");
+        let remainingCards = document.querySelectorAll(".container");
         if (remainingCards.length === 0) {
             document.getElementById("art").innerText = "add something you like!";
         }
