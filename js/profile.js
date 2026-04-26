@@ -1,9 +1,18 @@
 let storeData = localStorage.getItem("user")
 let userData = JSON.parse(storeData);
 
-document.getElementById("userName").innerText= userData.Name;
-document.getElementById("userEmail").innerText = userData.Email;
+if(userData.Name == undefined){
+    document.getElementById("userName").innerText= "Welcome Back!";
+    document.getElementById("userEmail").innerText = userData.Email;
+}else{
+    document.getElementById("userName").innerText= "Hello " + userData.Name;
+    document.getElementById("userEmail").innerText = userData.Email;
+}
 
+
+if(userData.Name == ""){
+    document.getElementById("userName").innerText= "Welcome Back";
+}
 
 
 
@@ -26,6 +35,17 @@ for(let j of artifactData){
     let icon = document.createElement("i");
 
     icon.classList.add("fa-solid", "fa-heart", "heart-icon");
+    icon2.classList.add("fa-solid", "fa-arrow-right");
+
+    icon.onclick = () => {
+        removeFromLocal("favorite", j.id);
+        card.remove();
+        let remainingCards = document.querySelectorAll(".container");
+        if (remainingCards.length === 0) {
+            document.getElementById("art").innerText = "add something you like!";
+        }
+    };
+
     iconDiv.classList.add("iconBox");
     cardFooter.classList.add("cardFooter");//adding classes 
     textContainer.classList.add("text");

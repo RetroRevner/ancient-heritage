@@ -5,6 +5,7 @@
     --golden-btn-text-color: #432f01;
     --text-color: #a4a2a8;
     --small-text-color: #b5aa9b;
+    --black : #000;
 }
 @font-face {
     font-family: mainFont;
@@ -56,17 +57,84 @@ hr{
     background-color: var(--golden-color);
     border-radius: 2px;
     text-align: center;
+    transition: 0.15s ;
+    margin: 1px;
 }
 .btn:hover{
-    transform: scale(1.1);
-    box-shadow: 5px 5px 8px #000;
+    transform: scale(1.01);
+    box-shadow: 5px 5px 8px var(--black);
     border: 1px solid var(--golden-btn-text-color);
 }
 a{
     text-decoration: none;
-    color: #000;
+    color: var(--black);
     font-size: 130%;
 }
 .fav{
-    
+    justify-self: center;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+    h2{
+        color: var(--golden-color);
+        font-weight: unset;
+        font-size: 80%;
+        width: auto;
+        line-height: 1.2;
+        word-wrap: break-word;
+    }
+    h5{
+        color: var(--small-text-color);
+        font-weight: unset;
+        font-size: 75%;
+        width: 20px;
+    }
+    h6{
+        color: var(--small-text-color);
+        font-weight: unset;
+        font-size: 65%;
+        width: auto;
+        white-space: nowrap;
+    }
+    .container{
+        margin: 2%;
+        display: flex;
+        justify-self: center;
+        width: 600px;
+        height: 20%;
+        align-items: center;
+        gap: 25px;
+    }
+    .picture{
+        height: 130px;
+        width: 130px;
+    }
+    .nameInfo{
+        flex: 1;
+        min-width: 150px;
+        text-wrap: wrap;
+    }
+    .iconBox{
+        display: flex;
+        align-items: center;
+        font-size: 150%;
+        width: 20px;
+        gap: 15px;
+        justify-content: flex-end;
+    }
+    .text{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .cardFooter{
+        display: flex; 
+        align-items: center;
+        width: 100%;
+        gap: 15px;
+        justify-content: space-between;
+    }
 }
