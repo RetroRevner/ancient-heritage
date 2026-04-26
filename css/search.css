@@ -149,5 +149,5 @@ img {
     cursor: pointer;
 }
 .active-icon{
-    color: red !important;
+    color: #000 !important;
 }
