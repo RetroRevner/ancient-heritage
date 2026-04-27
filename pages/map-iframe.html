@@ -33,9 +33,18 @@
             transition: 0.4s;
         }
 
-        #map {
+        #map-dark {
             position: absolute;
             width: 100%;
+            opacity: 1;
+            transition: 0.4s;
+        }
+
+        #map-light {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: 0.4s;
         }
 
         #zoom-in:hover {
@@ -230,7 +239,8 @@
 
 <body>
     <div id="iframe-container">
-        <img src="../assets/images/Map-imgs/dark-map.jpg" id="map" draggable="false">
+        <img src="../assets/images/Map-imgs/dark-map.jpg" id="map-dark" draggable="false">
+        <img src="../assets/images/Map-imgs/white-map.jpg" id="map-light" draggable="false">
         <div id="icons-container">
             <img src="../assets/images/Map-imgs/pyramids.png" id="pyramid" onclick="selected(this.id)"
                 draggable="false">

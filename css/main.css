@@ -1,3 +1,8 @@
+@font-face {
+    font-family: mainFont;
+    src: url(../assets/Fonts/noto-serif.regular.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -21,6 +26,11 @@
     --footer-light: #e8d9ac;
 }
 
+::selection {
+    background-color: #c59f59c5;
+    color: #4e3700;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -30,13 +40,15 @@ body {
     background-image:
         radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.09) 0%, transparent 40%),
         radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.09) 0%, transparent 40%);
+    background-repeat: no-repeat;
     transition: 0.3s;
 }
 
-
-@font-face {
-    font-family: mainFont;
-    src: url(../assets/Fonts/noto-serif.regular.ttf);
+body.light {
+    background-color: var(--background-light);
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(159, 132, 41, 0.09) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(159, 132, 41, 0.09) 0%, transparent 40%);
 }
 
 .mode-cnt {
@@ -48,6 +60,12 @@ body {
     padding: 5px;
     align-items: center;
     left: 200px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.mode-cnt.light {
+    background-color: var(--golden-btn-text-color);
 }
 
 .mode-cnt .span1 {
@@ -61,6 +79,11 @@ body {
     border-radius: 40px;
     left: calc(100% - 45px);
     transition: 0.3s ease-in;
+}
+
+.mode-cnt .span1.light {
+    left: 5px;
+    background-color: var(--footer-light);
 }
 
 .mode-cnt .span2 {
@@ -80,7 +103,11 @@ body {
     stroke-width: 2px;
     stroke-linecap: round;
     stroke-linejoin: round;
-    transition: 0.1s ease-in;
+    transition: 0.2s ease-in;
+}
+
+.sun.light {
+    scale: 1;
 }
 
 .moon {
@@ -92,7 +119,11 @@ body {
     stroke-width: 2px;
     stroke-linecap: round;
     stroke-linejoin: round;
-    transition: 0.1s ease-in;
+    transition: 0.2s ease-in;
+}
+
+.moon.light {
+    scale: 0;
 }
 
 .sun2 {
@@ -108,18 +139,26 @@ body {
     transition: 0.3s;
 }
 
+.sun2.light {
+    scale: 0;
+}
+
 .moon2 {
     position: absolute;
     width: 35px;
     left: 55px;
     scale: 0;
-    stroke: var(--golden-color);
-    fill: var(--golden-color);
+    stroke: #62522e;
+    fill: #62522e;
     stroke-width: 2px;
     stroke-linecap: round;
     stroke-linejoin: round;
     transition: 0.3s;
     transform-origin: center;
+}
+
+.moon2.light {
+    scale: 1;
 }
 
 .nav-bar {
@@ -138,6 +177,12 @@ body {
     padding: 0 40px;
     letter-spacing: 5px;
     transition: 0.3s;
+}
+
+.nav-bar.light {
+    background-color: var(--navBar-color-light);
+    color: var(--big-text-light);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-cnt {
@@ -160,8 +205,16 @@ body {
     letter-spacing: normal;
 }
 
+.nav-links a.light {
+    color: var(--text-light);
+}
+
 .nav-bar a:hover {
     color: var(--golden-color);
+}
+
+.nav-links a.light:hover {
+    color: var(--active-text);
 }
 
 .nav-links a.active {
@@ -169,27 +222,13 @@ body {
     text-decoration: underline;
     text-underline-offset: 6px;
 }
-.section {
-  position: relative; /*عشان الحركه الخط يبقي تحت الكلمه بس هو بيدور علي اقرب عنصر واخد position:relative*/
-  display: inline-block; /* عشان يبقى على قد الكلمة */
-}
-.section::after {
-  content: ""; /*عشان يظهر*/
-  position: absolute; /*يتحرك بالنسبه للعنصر ال relative ..section*/
-  width: 0; /*في الاول مش باين*/
-  height: 3px; /*ارتفاعه */
-  background-color: var(--golden-hover-color); /*لونه*/
-  left: 50%; /*يبدا من النص */
-  bottom: -5px;/*يبقي تحت الكلمه*/
-  transition:
-    width 0.3s ease, /*الحركه بتاعته*/
-    left 0.3s ease;
+
+.nav-links a.active-light {
+    color: var(--active-text);
+    text-decoration: underline;
+    text-underline-offset: 6px;
 }
 
-.section:hover::after {
-  width: 100%; /*لما نعمل hover العرض يكبر*/
-  left: 0;/* يبقي من اول الكلمه */
-}
 .sign {
     display: flex;
     
@@ -207,18 +246,25 @@ body {
     transition: 0.4s;
 }
 
+.nav-bar .sign-btn.light {
+    background-color: #765700;
+    color: #ffffff;
+}
+
 .icon {
     display: none;
+    color: var(--golden-color);
+    font-size: 40px;
+    transition: 0.4s;
+}
+
+.icon.light {
+    color: #765700;
 }
 
 .nav-bar .sign-btn:hover {
     background-color: var(--golden-hover-color);
     color: var(--golden-btn-text-color);
-}
-
-
-.nav-bar .sign a.sign-btn.active {
-    background-color: var(--golden-hover-color);
 }
 
 main {
@@ -227,7 +273,7 @@ main {
 
 .footer {
     display: flex;
-    height: 50px;
+    height: 70px;
     align-items: center;
     justify-content: space-between;
     font-family: mainFont;
@@ -237,6 +283,12 @@ main {
     padding: 0 40px;
     letter-spacing: 2px;
     transition: 0.3s;
+}
+
+.footer.light {
+    background-color: var(--footer-light);
+    color: var(--big-text-light);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .footer h5 {
@@ -264,6 +316,14 @@ main {
     letter-spacing: normal;
 }
 
+.footer-links a.light {
+    color: var(--big-text-light);
+}
+
+.footer-links a.light:hover {
+    color: var(--active-text);
+}
+
 .footer-links a:hover {
     color: var(--golden-color);
 }
@@ -272,4 +332,12 @@ main {
     color: var(--golden-color);
     text-decoration: underline;
     text-underline-offset: 6px;
+}
+
+.footer-links a.active-light {
+    color: var(--active-text)
+}
+
+.footer-links a.active-light:hover {
+    color: var(--active-text)
 }

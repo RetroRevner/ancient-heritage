@@ -309,7 +309,7 @@ function selected(value) {
 }
 
 const normal_scale = 1;
-const max_scale = 2;
+const max_scale = 3;
 const add = 0.2;
 function zoomIn() {
     let map = document.getElementById("iframe-container");
