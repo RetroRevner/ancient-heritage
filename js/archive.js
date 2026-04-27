@@ -479,6 +479,24 @@ for (let i of archiveData) {//لوب عادية
 }
 
 let remainingCards = document.querySelectorAll(".card");
-        if (remainingCards.length === 0) {
-            document.getElementById("main").innerHTML = "<h2 class='empty'>archive is empty</h2>";
-        }
+if (remainingCards.length === 0) {
+    document.getElementById("main").innerHTML = "<h2 class='empty'>archive is empty</h2>";
+}
+
+let cards = document.querySelectorAll(".card");
+function archiveMod() {
+    cards.forEach(e => {
+        e.classList.toggle("light");
+    })
+}
+if (document.querySelector(".card").classList.contains("light")) {
+    let currentArchive = localStorage.setItem("archiveMod", "light");
+}
+else {
+    let currentArchive = localStorage.setItem("archiveMod", "dark");
+}
+let savedArc = localStorage.getItem("archiveMod");
+let savedMod = localStorage.getItem("theme");
+if (savedArc !== savedMod) {
+    archiveMod();
+}

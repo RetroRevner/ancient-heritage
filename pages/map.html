@@ -18,13 +18,13 @@
         </div>
         <div class="nav-cnt">
             <div class="nav-links">
-                <a class="section" href="../index.html">Home</a>
-                <a class="section" href="archive.html">Archive</a>
-                <a class="section" href="museums.html">Museum</a>
-                <a class="section" href="map.html" class="active">Map</a>
-                <a class="section" href="search.html">Search</a>
+                <a href="../index.html">Home</a>
+                <a href="archive.html">Archive</a>
+                <a href="museums.html">Museum</a>
+                <a href="map.html" class="active">Map</a>
+                <a href="search.html">Search</a>
             </div>
-            <div class="mode-cnt" onclick="changeMod()">
+            <div class="mode-cnt" onclick="changeMod(); mapMod()">
                 <span class="span1">
                     <svg class="sun" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -92,6 +92,7 @@
         </div>
     </footer>
     <script src="../js/main.js"></script>
+    <script src="../js/map.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
     <!-- 
     imap تغيير حجم الصورة يبوظ الـ

@@ -530,3 +530,19 @@ document.getElementById("search").addEventListener("click", () => {
 
 })
 
+let search = document.querySelector(".search-window input");
+function searchMod(){
+    search.classList.toggle("light");
+    document.querySelector(".search-header").classList.toggle("light")
+}
+if (search.classList.contains("light")) {
+    let currenS = localStorage.setItem("searchMod", "light");
+}
+else {
+    let currentS = localStorage.setItem("searchMod", "dark");
+}
+let savedS = localStorage.getItem("searchMod");
+let savedMod = localStorage.getItem("theme");
+if (savedS !== savedMod) {
+    searchMod();
+}

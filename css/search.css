@@ -1,11 +1,22 @@
 :root {
-    --navBar-color: #131313;
+    --navBar-color-dark: #131313e6;
+    --navBar-color-light: #fef8efe6;
+    --background-dark: #0a0a0a;
+    --background-light: #f8f2ea;
     --golden-color: #e7c075;
     --golden-hover-color: #bb954f;
     --golden-btn-text-color: #432f01;
-    --text-color: #a4a2a8;
-    --small-text-color: #b5aa9b;
+    --text-dark: #a4a2a8;
+    --text-light: #4e4635;
+    --active-text: rgb(152, 120, 34);
+    --active-text: #987822;
+    --big-text-light: #2b240a;
+    --small-text-dark: #b5aa9b;
+    --footer-light: #e8d9ac;
+    --button-light: #765700;
     --card-background-color:#353534;
+    --container-color-light: #fdedbf;
+    --container-second-light: #383010;
 }
 
 main {
@@ -13,10 +24,15 @@ main {
 }
 
 .search-header {
-    color: var(--text-color);
+    color: var(--text-dark);
     font-size: 40px;
     margin-left: 16%;
     margin-top: 12px;
+    transition: 0.3s;
+}
+
+.search-header.light {
+    color: var(--text-light);
 }
 
 .search-window {
@@ -32,6 +48,12 @@ main {
     font-size: 16px;
     padding: 5px;
     color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.search-window input.light {
+    background-color: var(--container-second-light);
 }
 
 .search-window input:focus {
@@ -44,6 +66,10 @@ main {
     background-color: var(--golden-color);
     cursor: pointer;
     border: none;
+}
+
+.search-window button.light {
+    background-color: var(--active-text);
 }
 
 .search-window button:hover {
@@ -62,17 +88,27 @@ main {
     border-radius: 3em;
     border: 2px solid var(--golden-color);
     background-color: transparent;
-    color: var(--small-text-color);
+    color: var(--small-text-dark);
     cursor: pointer;
+}
+
+.categories button.light {
+    border: 2px solid var(--button-light);
 }
 
 .active-category {
     background-color: var(--golden-color) !important;
     color: var(--golden-btn-text-color) !important;
 }
+
+.active-category.light {
+    background-color: var(--button-light) !important;
+    color: white !important;
+}
 .hide{
     display: none;
 }
+
 #artifacts-container {
     display: flex;
     flex-wrap: wrap;
@@ -89,11 +125,15 @@ main {
     max-width: 19em;
     padding: 8px;
     height: 390px;
-    border-radius: 5px;
+    border-radius: 10px;
     /* img{
         display: flex;
         justify-self: center;
     } */
+}
+
+.card.light {
+    background-color: var(--container-second-light);
 }
 
 .image-container {
@@ -114,13 +154,13 @@ img {
 }
 
 .artifact-name{
-    color: var(--text-color);
+    color: var(--text-dark);
     margin-top: 5px;
     font-size: 20px;
     width: 240px;
 }
 .artifacte-subtitle{
-    color: var(--small-text-color);
+    color: var(--small-text-dark);
     margin-top: 10px;
     width: 240px;
 }

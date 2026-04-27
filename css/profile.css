@@ -1,12 +1,23 @@
-
 :root {
-    --navBar-color: #131313;
+    --black : #000;
+    --navBar-color-dark: #131313e6;
+    --navBar-color-light: #fef8efe6;
+    --background-dark: #0a0a0a;
+    --background-light: #f8f2ea;
     --golden-color: #e7c075;
     --golden-hover-color: #bb954f;
     --golden-btn-text-color: #432f01;
-    --text-color: #a4a2a8;
-    --small-text-color: #b5aa9b;
-    --black : #000;
+    --text-dark: #a4a2a8;
+    --text-light: #4e4635;
+    --active-text: rgb(152, 120, 34);
+    --active-text: #987822;
+    --big-text-light: #2b240a;
+    --small-text-dark: #b5aa9b;
+    --footer-light: #e8d9ac;
+    --button-light: #765700;
+    --card-background-color:#353534;
+    --container-color-light: #fdedbf;
+    --container-second-light: #383010;
 }
 @font-face {
     font-family: mainFont;
@@ -35,11 +46,11 @@ h1{
     font-weight: unset;
 }
 h4,h3{
-    color: var(--small-text-color);
+    color: var(--small-text-dark);
     font-weight: unset;
 }
 h3{
-    border-bottom: 2px solid var(--small-text-color);
+    border-bottom: 2px solid var(--small-text-dark);
     padding: 2%;
 }
 .fav{
@@ -86,13 +97,13 @@ a{
         word-wrap: break-word;
     }
     h5{
-        color: var(--small-text-color);
+        color: var(--small-text-dark);
         font-weight: unset;
         font-size: 75%;
         width: 20px;
     }
     h6{
-        color: var(--small-text-color);
+        color: var(--small-text-dark);
         font-weight: unset;
         font-size: 65%;
         width: auto;

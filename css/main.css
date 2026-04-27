@@ -24,6 +24,9 @@
     --big-text-light: #2b240a;
     --small-text-dark: #b5aa9b;
     --footer-light: #e8d9ac;
+    --button-light: #765700;
+    --container-color-light: #fdedbf;
+    --container-second-light: #383010;
 }
 
 ::selection {
@@ -247,7 +250,7 @@ body.light {
 }
 
 .nav-bar .sign-btn.light {
-    background-color: #765700;
+    background-color: var(--button-light);
     color: #ffffff;
 }
 
@@ -259,7 +262,7 @@ body.light {
 }
 
 .icon.light {
-    color: #765700;
+    color: var(--button-light);
 }
 
 .nav-bar .sign-btn:hover {

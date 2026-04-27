@@ -1,11 +1,22 @@
 :root {
-    --navBar-color: #131313;
+    --navBar-color-dark: #131313e6;
+    --navBar-color-light: #fef8efe6;
+    --background-dark: #0a0a0a;
+    --background-light: #f8f2ea;
     --golden-color: #e7c075;
     --golden-hover-color: #bb954f;
     --golden-btn-text-color: #432f01;
-    --text-color: #a4a2a8;
-    --small-text-color: #b5aa9b;
+    --text-dark: #a4a2a8;
+    --text-light: #4e4635;
+    --active-text: rgb(152, 120, 34);
+    --active-text: #987822;
+    --big-text-light: #2b240a;
+    --small-text-dark: #b5aa9b;
+    --footer-light: #e8d9ac;
+    --button-light: #765700;
     --card-background-color: #353534;
+    --container-color-light: #fdedbf;
+    --container-second-light: #383010;
 }
 
 @font-face {
@@ -27,44 +38,48 @@ img {
     max-width: 100%;
     object-fit: contain;
     height: 10em;
+    border-radius: 20px;
 }
 
-i {
-    color: var(--golden-color);
-    font-size: large;
-}
 
 .museum {
-    border-bottom: 3px solid var(--text-color);
+    border-bottom: 3px solid var(--text-dark);
     margin: 1%;
 }
 
-h1 {
+
+main i {
+    color: var(--golden-color);
+    font-size: large;
+    
+}
+
+main h1 {
     color: var(--golden-color);
     text-align: center;
     font-weight: unset;
 }
 
-h3 {
+main h3 {
     color: var(--small-text-color);
     text-align: right;
     padding: 1.5%;
     font-weight: unset;
 }
 
-h5 {
+main h5 {
     color: var(--golden-color);
     font-size: 12px;
     margin-top: 10px;
     font-weight: unset;
 }
 
-h2 {
-    color: var(--text-color);
+main h2 {
+    color: var(--text-dark);
     font-weight: unset;
 }
 
-h6 {
+main h6 {
     color: var(--small-text-color);
     font-weight: unset;
 }
@@ -83,7 +98,7 @@ h6 {
 
 .img:hover {
     transform: scale(1.1);
-
+    
 }
 
 .header {
@@ -96,7 +111,7 @@ h6 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 40px;
-    column-gap: 20px;
+    column-gap: 40px;
     padding: 20px 40px;
 }
 
@@ -104,13 +119,21 @@ h6 {
     display: flex;
     gap: 15px;
     background-color: var(--card-background-color);
+    border-radius: 20px;
+    padding: 10px;
+    transition: 0.4s;
+}
+
+.card.light {
+    background-color: var(--container-second-light);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .text-container {
     display: flex;
     flex-direction: column;
     height: 100%;
-    gap: 12px;
+    gap: 10px;
 }
 
 .empty {
@@ -124,7 +147,6 @@ h6 {
     gap: 12px;
 }
 
-.image-container{
+.image-container {
     height: 160px;
 }
-

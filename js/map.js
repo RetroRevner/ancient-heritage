@@ -6,28 +6,19 @@ function selected(value) {
     // parentتخليه يخرج للـ
     // اللي هو صفحة الماب ويدور فيها
     let infoCnt = window.parent.document.getElementById("information-container");
-    let mapCnt = window.parent.document.getElementById("map-container");
-    let mapIf = window.parent.document.getElementById("map-iframe");
-    let main = window.parent.document.getElementById("map-main");
-    let styled = window.parent.getComputedStyle(infoCnt);
-    let top = styled.top;
-    if (top === "0px" && current === value) { //يشوف لو الكونتينر معروض وتم الضغط على نفس الزرار
-        infoCnt.style.top = "-150vh";
-        mapCnt.style.marginRight = "0";
-        mapIf.style.width = "70vw";
-        main.style.marginBottom = "0";
-    } else {
-        infoCnt.style.top = "0";
-        mapCnt.style.marginRight = "20%";
-        mapIf.style.width = "60vw";
-        main.style.marginBottom = "90px";
-        current = value; //بنعرف قيمة اخر زرار عشان لو دوسنا عليه تاني
+    if (!infoCnt.classList.contains("selected") || current === value) { //يشوف لو الكونتينر معروض وتم الضغط على نفس الزرار
+        infoCnt.classList.toggle("selected");
+        window.parent.document.getElementById("map-container").classList.toggle("selected");
+        window.parent.document.getElementById("map-iframe").classList.toggle("selected");
+        window.parent.document.getElementById("map-main").classList.toggle("selected");
     }
+    current = value; //بنعرف قيمة اخر زرار عشان لو دوسنا عليه تاني
+    
     if (value == "pyramid") { //بنغير الصورة والمعلومات المعروضة على حسب القيمة المبعوتة
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">The Great<br>Pyramid of Giza</p>
-            <img src="../assets/images/Map-imgs/pyramid.png" id="img" usemap="#image-map" draggable="false">
+            <img src="../assets/images/Map-imgs/` + value + `.png" id="img" usemap="#image-map" draggable="false">
             <map name="image-map">
                 <area target="_blank" alt="" title="" href="https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
                     coords="40,309,250,54,503,308" shape="poly">
@@ -328,5 +319,38 @@ function zoomout() {
     let scale = parseFloat(map.style.scale);
     if (scale > normal_scale) { //عشان ميصغرش عن 1
         map.style.scale = scale - add;
+    }
+}
+
+function mapMod() {
+    let iframe = document.getElementById("map-iframe");
+    let imgs = iframe.contentDocument.querySelectorAll("#icons-container img");
+    let changer = document.querySelector(".mode-cnt");
+    if (!changer.classList.contains("light")) {
+        imgs.forEach(e => {
+            let currentOp = window.getComputedStyle(e).opacity;
+            if (currentOp === "1") {
+                e.style.opacity = "0";
+            }
+            else {
+                e.style.opacity = "1";
+            }
+
+        })
+        iframe.contentDocument.getElementById("map-dark").style.opacity = "1";
+        iframe.contentDocument.getElementById("map-light").style.opacity = "0";
+    }
+    else {
+        imgs.forEach(e => {
+            let currentOp = window.getComputedStyle(e).opacity
+            if (currentOp === "0") {
+                e.style.opacity = "1";
+            }
+            else {
+                e.style.opacity = "0";
+            }
+        })
+        iframe.contentDocument.getElementById("map-dark").style.opacity = "0";
+        iframe.contentDocument.getElementById("map-light").style.opacity = "1";
     }
 }
