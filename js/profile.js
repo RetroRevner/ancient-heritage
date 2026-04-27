@@ -19,12 +19,56 @@ function removeFromLocal(key, id) {
     localStorage.setItem(key, JSON.stringify(updatedItems));
 }
 
+document.querySelector(".btn").onclick = ()=>{
+    let box = document.createElement("div");
+    box.classList.add("box");
+    let icony = document.createElement("i");
+    icony.classList.add("fa-solid","fa-arrow-right-from-bracket","icony");
+    let heading = document.createElement("h1");
+    heading.classList.add("heading");
+    let warning = document.createElement("h4");
+    warning.classList.add("warn");
+    let hr = document.createElement("div");
+    hr.classList.add("hr");
+    let choice = document.createElement("div");
+    choice.classList.add("choice");
+    let yes = document.createElement("h4");
+    let no = document.createElement("h4");
+    yes.classList.add("yes");
+    no.classList.add("no");
+    document.querySelector("#pop").appendChild(box);
 
+
+    box.appendChild(icony);
+    box.appendChild(heading);
+    box.appendChild(warning);
+    box.appendChild(hr);
+    box.appendChild(choice);
+    choice.appendChild(no);
+    choice.appendChild(yes);
+
+    heading.innerText="Sign Out"
+    warning.innerText ="are you sure you want to sign out ?";
+    yes.innerText ="sign out";
+    no.innerText ="cancel";
+    
+
+
+    
+    document.querySelector(".no").onclick = ()=>{document.querySelector("#pop").removeChild(box);};
+    document.querySelector(".yes").onclick = ()=>{localStorage.clear(user);window.location.href = "../index.html"; };
+    
+}
 
 
 
 let Data = localStorage.getItem("favorite");
 let artifactData = JSON.parse(Data);
+
+
+if(localStorage.getItem("favorite") === null){
+    document.getElementById("art").innerText = "add something you like!";
+}
 
 for (let j of artifactData) {
     let card = document.createElement("div");
@@ -63,8 +107,8 @@ for (let j of artifactData) {
     card.appendChild(picDiv);
     picDiv.appendChild(pic);
     card.appendChild(textContainer);
-    nameInfo.appendChild(name);
     nameInfo.appendChild(matrial);
+    nameInfo.appendChild(name);
     textContainer.appendChild(nameInfo)
     textContainer.appendChild(cardFooter);
     cardFooter.appendChild(categ);
@@ -83,4 +127,5 @@ for (let j of artifactData) {
 
     document.querySelector(".fav").appendChild(card)
 }
+
 
