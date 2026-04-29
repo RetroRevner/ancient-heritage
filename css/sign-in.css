@@ -1,3 +1,29 @@
+:root {
+    --navBar-colo-dark-dark: #131313e6;
+    --navBar-colo-dark-light: #fef8efe6;
+    --background-dark: #0a0a0a;
+    --background-light: #f8f2ea;
+    --golden-color: #e7c075;
+    --golden-hover-color: #bb954f;
+    --golden-btn-text-color: #432f01;
+    --text-dark: #a4a2a8;
+    --text-light: #4e4635;
+    --active-text: rgb(152, 120, 34);
+    --active-text: #987822;
+    --big-text-light: #2b240a;
+    --small-text-dark: #b5aa9b;
+    --footer-light: #e8d9ac;
+    --button-light: #765700;
+    --container-color-light: #fdedbf;
+    --container-second-light: #383010;
+}
+
+@font-face {
+    font-family: mainFont;
+    src: url(../assets/Fonts/noto-serif.regular.ttf);
+}
+
+
 .a{
     position: relative;
     display: flex;
@@ -34,7 +60,7 @@ h1{
      border-top:5px solid var(--golden-color) ;
 }
 .description{
-    color: var(--small-text-color);
+    color: var(--small-text-dark);
     font-size: 22px;
     font-family: mainFont ;
     padding:20px 0;
@@ -53,7 +79,7 @@ h1{
     font-weight: normal;
 }
 .end p{
-    color: var(--small-text-color);
+    color: var(--small-text-dark);
     font-size: 14px;
     font-family: mainFont;
     letter-spacing: 2px;
@@ -61,7 +87,7 @@ h1{
 .left{
     display: flex;
     justify-content: center;
-    background-color: var(--navBar-color);
+    background-color: var(--navBar-colo-dark);
     padding:50px;
     width: 40%;
 }
@@ -70,6 +96,9 @@ h1{
     flex-direction: column;
     /* gap: 25px; */
     width: 100%;
+    background-color: var(--navBar-colo-dark-dark);
+    padding: 50px;
+    border-radius: 20px;
 }
 .form-link{
     display: flex;
@@ -79,7 +108,7 @@ h1{
 }
 .form-link a{
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--text-dark);
     font-size: 16px;
     font-family: mainFont;
     letter-spacing: 2px;
@@ -95,21 +124,21 @@ h1{
 form div {
     display: flex;
     flex-direction: column;
-    color: var(--small-text-color);
+    color: var(--small-text-dark);
     
 }
 div label{
     font-size:16px ;
     font-family: mainFont;
     font-weight: normal;
-    color: var(--small-text-color);
+    color: var(--small-text-dark);
     letter-spacing: 2px;
     padding: 5px 0;
 }
 div input{
     font-size: 16px;
     font-family: mainFont;
-    color: var(--text-color);
+    color: var(--text-dark);
     padding: 10px;
     background-color: rgba(46, 45, 45, 0.4);
     outline: none;
@@ -160,7 +189,7 @@ button:hover {
     transform: translateY(8px);
 }
 .sign-in P{
-    color:var(--text-color);
+    color:var(--text-dark);
     font-size: 10px;
     font-family: mainFont;
     text-align: center;
@@ -193,7 +222,7 @@ button:hover {
 .or::before{
      content: '';
     flex: 1;
-    border-bottom: 1px solid var(--small-text-color);
+    border-bottom: 1px solid var(--small-text-dark);
     margin-right: 15px;
     margin-left: 15px;
 }
@@ -206,7 +235,7 @@ button:hover {
     margin-bottom: 20px;
 }
 .icon{
-    color: var(--small-text-color);
+    color: var(--small-text-dark);
     font-size: 25px;
     font-family: mainFont;
     transition: 0.3s;

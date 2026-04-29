@@ -46,7 +46,6 @@ function changeMod() {
     }
 }
 let saved = localStorage.getItem("theme");
-
 if (saved === "light") {
     changeMod();
 }

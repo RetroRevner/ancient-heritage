@@ -13,8 +13,16 @@ function selected(value) {
         window.parent.document.getElementById("map-main").classList.toggle("selected");
     }
     current = value; //بنعرف قيمة اخر زرار عشان لو دوسنا عليه تاني
-    
+
     if (value == "pyramid") { //بنغير الصورة والمعلومات المعروضة على حسب القيمة المبعوتة
+        let p = document.querySelectorAll("#icons-container img");
+        p.forEach(e => {
+            if (e.id !== value) {
+                e.classList.remove("active");
+            } else {
+                e.classList.toggle("active");
+            }
+        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">The Great<br>Pyramid of Giza</p>
@@ -49,6 +57,14 @@ function selected(value) {
     }
 
     if (value == "siwa") {
+        let p = document.querySelectorAll("#icons-container img");
+        p.forEach(e => {
+            if (e.id !== value) {
+                e.classList.remove("active");
+            } else {
+                e.classList.toggle("active");
+            }
+        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">Siwa Oasis</p>
@@ -84,6 +100,14 @@ function selected(value) {
     }
 
     if (value == "bahariya") {
+        let p = document.querySelectorAll("#icons-container img");
+        p.forEach(e => {
+            if (e.id !== value) {
+                e.classList.remove("active");
+            } else {
+                e.classList.toggle("active");
+            }
+        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">Bahariya Oasis</p>
@@ -119,6 +143,14 @@ function selected(value) {
     }
 
     if (value == "farafra") {
+        let p = document.querySelectorAll("#icons-container img");
+        p.forEach(e => {
+            if (e.id !== value) {
+                e.classList.remove("active");
+            } else {
+                e.classList.toggle("active");
+            }
+        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">Farafra Oasis</p>
@@ -155,6 +187,14 @@ function selected(value) {
     }
 
     if (value == "dakhla") {
+        let p = document.querySelectorAll("#icons-container img");
+        p.forEach(e => {
+            if (e.id !== value) {
+                e.classList.remove("active");
+            } else {
+                e.classList.toggle("active");
+            }
+        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">Dakhla Oasis</p>
@@ -190,6 +230,14 @@ function selected(value) {
     }
 
     if (value == "kharga") {
+        let p = document.querySelectorAll("#icons-container img");
+        p.forEach(e => {
+            if (e.id !== value) {
+                e.classList.remove("active");
+            } else {
+                e.classList.toggle("active");
+            }
+        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">Kharga Oasis</p>
@@ -226,6 +274,14 @@ function selected(value) {
     }
 
     if (value == "abu-simbel") {
+        let p = document.querySelectorAll("#icons-container img");
+        p.forEach(e => {
+            if (e.id !== value) {
+                e.classList.remove("active");
+            } else {
+                e.classList.toggle("active");
+            }
+        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">Abu Simbel</p>
@@ -261,6 +317,14 @@ function selected(value) {
     }
 
     if (value == "karnak") {
+        let p = document.querySelectorAll("#icons-container img");
+        p.forEach(e => {
+            if (e.id !== value) {
+                e.classList.remove("active");
+            } else {
+                e.classList.toggle("active");
+            }
+        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">El Karnak</p>

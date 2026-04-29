@@ -70,4 +70,21 @@ function clearT() {
   let text = document.getElementsByTagName("textarea")[0];
     text.classList.remove("E");
     errorT.innerText = "";
-} 
+}
+
+let left = document.querySelector(".left");
+function feedMod(){
+   left.classList.toggle("light");
+
+}
+if (left.classList.contains("light")) {
+   let currentfeed = localStorage.setItem("feedMod", "light");
+}
+else {
+   let currentfeed = localStorage.setItem("feedMod", "dark");
+}
+let savedfed = localStorage.getItem("feedMod");
+let savedMod = localStorage.getItem("theme");
+if (savedfed !== savedMod) {
+   feedMod();
+}

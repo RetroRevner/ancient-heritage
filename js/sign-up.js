@@ -100,3 +100,7 @@ function clearM(index) {
    errorM[index].innerText = "";
   successM[index].innerText = "";
 }
+
+function upMod(){
+   
+}

@@ -7,7 +7,6 @@
     <title>Ancient Heritage | About Us</title>
 
     <link rel="stylesheet" href="../css/about.css">
-
     <link rel="stylesheet" href="../css/main.css">
     <!-- !!ملف تنسيق الناف بار والفوتر مهم -->
     <script src="https://kit.fontawesome.com/728f1f9039.js" crossorigin="anonymous"></script>
@@ -27,119 +26,158 @@
                 <a href="map.html">Map</a>
                 <a href="search.html">Search</a>
             </div>
+            <div class="mode-cnt" onclick="changeMod(); aboutMod()">
+                <span class="span1">
+                    <svg class="sun" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon" viewBox="0 0 24 24">
+                        <path
+                            d="M18 15.63c-.977.52-1.945.481-3.13.481A6.981 6.981 0 0 1 7.89 9.13c0-1.185-.04-2.153.481-3.13C6.166 7.174 5 9.347 5 12.018A6.981 6.981 0 0 0 11.982 19c2.67 0 4.844-1.166 6.018-3.37ZM16 5c0 2.08-.96 4-3 4 2.04 0 3 .92 3 3 0-2.08.96-3 3-3-2.04 0-3-1.92-3-4Z" />
+                    </svg>
+                </span>
+                <span class="span2">
+                    <svg class="moon2" viewBox="0 0 24 24">
+                        <path
+                            d="M18 15.63c-.977.52-1.945.481-3.13.481A6.981 6.981 0 0 1 7.89 9.13c0-1.185-.04-2.153.481-3.13C6.166 7.174 5 9.347 5 12.018A6.981 6.981 0 0 0 11.982 19c2.67 0 4.844-1.166 6.018-3.37ZM16 5c0 2.08-.96 4-3 4 2.04 0 3 .92 3 3 0-2.08.96-3 3-3-2.04 0-3-1.92-3-4Z" />
+                    </svg>
+                    <svg class="sun2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </span>
+            </div>
         </div>
         <div class="sign">
             <a class="sign-btn" id="sign-btn" href="sign-up.html">Sign up</a>
-            <a id="icon" class="icon" href="profile.html"><i class="fa-solid fa-circle-user"
-                    style="color: var(--golden-color); font-size: 40px;"></i></a>
+            <a id="icon" class="icon" href="profile.html"><i class="fa-solid fa-circle-user"></i></a>
         </div>
     </nav>
     <main>
-        <main class="present-team">
+        <main class=" present-team">
             <div class="shadow"></div>
 
-    <header class="header">
-        <p class="subtitle">ANCIENT HERITAGE</p>
-        <div class="header-text">
-            <h1 class="title">The Guardians of the Digital Frontier: 8 Minds <span class="highlight">Resurrecting Ancient Wonders</span></h1>
-            <p class="description">A multidisciplinary collective dedicated to the preservation and digital elevation of ancient human legacy.</p>
-        </div>
-    </header>
-    <div class="team-grid">
-        <div class="team-cards">
-            <div class="image-card">
-             <img src="../assets/images/teamph/Hazemph.jpg" alt="Team Member">
-            </div>
-            <h3>Hazem Genady</h3>
-            <p class="work">The Digital Excavator</p>
-            <a href="https://www.linkedin.com/in/hazem-genady-a53109385?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="team-link">linkedin profile<span>-></span></a>
-        </div>  
-            <div class="team-cards">
-                     <div class="image-card">
-             <img src="../assets/images/teamph/Habibaph.jpg" alt="Team Member">
-            </div>
-            <h3>Habiba Medhat</h3>
-            <p class="work">The Algorithm Antiquarian</p>
-            <a href="https://www.linkedin.com/in/habiba-medhat-086847386?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="team-link">linkedin profile<span>-></span></a>
-            </div>  
-                <div class="team-cards">
+            <header class="header">
+                <p class="subtitle">ANCIENT HERITAGE</p>
+                <div class="header-text">
+                    <h1 class="title">The Guardians of the Digital Frontier: 7 Minds <span
+                            class="highlight">Resurrecting Ancient Wonders</span></h1>
+                    <p class="description">A multidisciplinary collective dedicated to the preservation and
+                        digital
+                        elevation of ancient human legacy.</p>
+                </div>
+            </header>
+            <div class="team-grid">
+                <div class="team-cards item1">
                     <div class="image-card">
-             <img src="../assets/images/teamph/Johnadelph.jpg" alt="Team Member">
+                        <img src="../assets/images/teamph/Hazemph.jpg" alt="Team Member">
+                    </div>
+                    <h3>Hazem Genady</h3>
+                    <p class="work">The Digital Excavator</p>
+                    <a href="https://www.linkedin.com/in/hazem-genady-a53109385?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        class="team-link">linkedin profile<span>-></span></a>
+                </div>
+                <div class="team-cards item1">
+                    <div class="image-card">
+                        <img src="../assets/images/teamph/Habibaph.jpg" alt="Team Member">
+                    </div>
+                    <h3>Habiba Medhat</h3>
+                    <p class="work">The Algorithm Antiquarian</p>
+                    <a href="https://www.linkedin.com/in/habiba-medhat-086847386?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        class="team-link">linkedin profile<span>-></span></a>
+                </div>
+                <div class="team-cards item1">
+                    <div class="image-card">
+                        <img src="../assets/images/teamph/Johnadelph.jpg" alt="Team Member">
+                    </div>
+                    <h3>John Adel</h3>
+                    <p class="work">The Virtual Tomb Raider</p>
+                    <a href="https://www.linkedin.com/in/john-adel15?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        class="team-link">linkedin profile<span>-></span></a>
+                </div>
+                <div class="team-cards item1">
+                    <div class="image-card">
+                        <img src="../assets/images/teamph/Janaph.jpg" alt="Team Member">
+                    </div>
+                    <h3>Jana Ibrahim</h3>
+                    <p class="work">The Cyber Cuneiform</p>
+                    <a href="https://www.linkedin.com/in/jana-ibrahim-9664b5386?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        class="team-link">linkedin profile<span>-></span></a>
+                </div>
+                <div class="team-cards item2">
+                    <div class="image-card">
+                        <img src="../assets/images/teamph/Rahmaph.jpg" alt="Team Member">
+                    </div>
+                    <h3>Rahma Mohamed</h3>
+                    <p class="work">The Data Druid</p>
+                    <a href="https://www.linkedin.com/in/rahma-mohamed-418846290?utm_source=share_via&utm_content=profile&utm_medium=member_android 😶"
+                        class="team-link">linkedin profile<span>-></span></a>
+                </div>
+                <div class="team-cards item2">
+                    <div class="image-card">
+                        <img src="../assets/images/teamph/Johnyasserph.jpg" alt="Team Member">
+                    </div>
+                    <h3>John Yasser</h3>
+                    <p class="work">The Relic Reconstructor</p>
+                    <a href="https://www.linkedin.com/in/john-yasser-37b51a401?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        class="team-link">linkedin profile<span>-></span></a>
+                </div>
+                <div class="team-cards item2">
+                    <div class="image-card">
+                        <img src="../assets/images/teamph/Jehadph.jpg" alt="Team Member">
+                    </div>
+                    <h3>Jehad Abdelhalem</h3>
+                    <p class="work">The Technical of Heritage</p>
+                    <a href="https://www.linkedin.com/in/jehad-abdelhalem-7626533a9?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        class="team-link">linkedin profile<span>-></span></a>
+                </div>
             </div>
-            <h3>John Adel</h3>
-            <p class="work">The Virtual Tomb Raider</p>
-            <a href="https://www.linkedin.com/in/john-adel15?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="team-link">linkedin profile<span>-></span></a>
-            </div>  
-            <div class="team-cards">
-            <div class="image-card">
-             <img src="../assets/images/teamph/Janaph.jpg" alt="Team Member">
-            </div>
-            <h3>Jana Ibrahim</h3>
-            <p class="work">The Cyber Cuneiform</p>
-            <a href="https://www.linkedin.com/in/jana-ibrahim-9664b5386?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="team-link">linkedin profile<span>-></span></a>
-            </div>
-            <div class="team-cards">
-            <div class="image-card">
-             <img src="../assets/images/teamph/hosamph.jpg" alt="Team Member">
-            </div>
-            <h3>Hossam Mohamed</h3>
-            <p class="work">The Neural Hieroglyphist</p>
-            <a href="https://www.linkedin.com/in/hossam-mohamed-48a833377?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="team-link">linkedin profile<span>-></span></a>
-            </div>
-            <div class="team-cards">
-            <div class="image-card">
-             <img src="../assets/images/teamph/Rahmaph.jpg" alt="Team Member">
-            </div>
-            <h3>Rahma Mohamed</h3>
-            <p class="work">The Data Druid</p>
-           <a href="https://www.linkedin.com/in/rahma-mohamed-418846290?utm_source=share_via&utm_content=profile&utm_medium=member_android 😶" class="team-link">linkedin profile<span>-></span></a>
-            </div>
-            <div class="team-cards">
-            <div class="image-card">
-             <img src="../assets/images/teamph/Johnyasserph.jpg" alt="Team Member">
-            </div>
-            <h3>John Yasser</h3>
-            <p class="work">The Relic Reconstructor</p>
-            <a href="https://www.linkedin.com/in/john-yasser-37b51a401?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="team-link">linkedin profile<span>-></span></a>
-            </div>
-            <div class="team-cards">
-            <div class="image-card">
-             <img src="../assets/images/teamph/Jehadph.jpg" alt="Team Member">
-            </div>
-            <h3>Jehad Abdelhalem</h3>
-            <p class="work">The Technic Prophet of Heritage</p>
-            <a href="https://www.linkedin.com/in/jehad-abdelhalem-7626533a9?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="team-link">linkedin profile<span>-></span></a>
-            </div>
-    </div>               
-    </main>
+        </main>
 
         <section class="join-us">
             <div class="box">
                 <p class="subtitle">CAREERS AT THE DIGITAL CURATOR</p>
                 <h2>Join The Expedition</h2>
-                <p class="description-text">"History is no longer,<span class="highlight"> carved in stone</span> ; it
-                    is coded in light. Join us where <span class="highlight"> silicon meets soul</span> to ensure human
+                <p class="description-text">"History is no longer,<span class="highlight"> carved in
+                        stone</span> ; it
+                    is coded in light. Join us where <span class="highlight"> silicon meets soul</span> to
+                    ensure human
                     legacy never fades to black."</p>
                 <button class="join-btn">Join Now</button>
             </div>
         </section>
-    <footer class="footer">
-        <div class="copy-right">
-            <h5>
-                ANCIENT HERITAGE
-            </h5>
-            <p>
-                © 2026 CAPITAL UNIVERSITY. All Rights Reserved.
-            </p>
-        </div>
-        <div class="footer-links">
-            <a href="https://www.capu.edu.eg/index.php/ar/" target="_blank">University site</a>
-            <a href="feedback.html">Feed Back</a>
-            <a href="about.html" class="active">About Us</a>
-        </div>
-    </footer>
-    <script src="../js/main.js"></script>
- 
+        <footer class="footer">
+            <div class="copy-right">
+                <h5>
+                    ANCIENT HERITAGE
+                </h5>
+                <p>
+                    © 2026 CAPITAL UNIVERSITY. All Rights Reserved.
+                </p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.capu.edu.eg/index.php/ar/" target="_blank">University site</a>
+                <a href="feedback.html">Feed Back</a>
+                <a href="about.html" class="active">About Us</a>
+            </div>
+        </footer>
+        <script src="../js/main.js"></script>
+
 </body>
 
 </html>

@@ -1,3 +1,25 @@
+:root {
+    --black : #000;
+    --navBar-color-dark: #131313e6;
+    --navBar-color-light: #fef8efe6;
+    --background-dark: #0a0a0a;
+    --background-light: #f8f2ea;
+    --golden-color: #e7c075;
+    --golden-hover-color: #bb954f;
+    --golden-btn-text-color: #432f01;
+    --text-dark: #a4a2a8;
+    --text-light: #4e4635;
+    --active-text: rgb(152, 120, 34);
+    --active-text: #987822;
+    --big-text-light: #2b240a;
+    --small-text-dark: #b5aa9b;
+    --footer-light: #e8d9ac;
+    --button-light: #765700;
+    --card-background-color:#353534;
+    --container-color-light: #fdedbf;
+    --container-second-light: #383010;
+}
+
 .a{
     position: relative;
     display: flex;
@@ -34,7 +56,7 @@ h1{
      border-top:5px solid var(--golden-color) ;
 }
 .description{
-    color: var(--small-text-color);
+    color: var(--small-text-dark);
     font-size: 22px;
     font-family: mainFont ;
     padding:20px 0;
@@ -73,11 +95,18 @@ li{
     margin:50px 0;
     display: flex;
     justify-content: center;
-    background-color: var(--navBar-color);
+    background-color: var(--navBar-color-dark);
     padding: 50px;
     width: 40%;
     height: auto;
+    border-radius: 20px;
+    transition: 0.4s;
 }
+
+.left.light{
+    background-color: var(--container-second-light);
+}
+
 .feed-back{
     display: flex;
     flex-direction: column;
@@ -86,14 +115,14 @@ li{
 form div {
     display: flex;
     flex-direction: column;
-    color: var(--small-text-color);
+    color: var(--small-text-dark);
     gap: 2px;
 }
 div label{
     font-size:16px ;
     font-family: mainFont;
     font-weight: normal;
-    color: var(--small-text-color);
+    color: var(--small-text-dark);
     letter-spacing: 2px;
     padding: 5px 0;
 }
@@ -101,7 +130,7 @@ div input ,
 div textarea{
     font-size: 16px;
     font-family: mainFont;
-    color: var(--text-color);
+    color: var(--text-dark);
     padding:5px 10px;
     background-color: rgba(46, 45, 45, 0.4);
     outline: none;
@@ -112,7 +141,7 @@ div textarea{
 .type {
     font-size: 16px;
     font-family: mainFont;
-    color: var(--text-color);
+    color: var(--text-dark);
     padding:5px 10px;
     background-color: rgba(46, 45, 45, 0.4);
     outline: none;
@@ -124,6 +153,7 @@ div textarea{
 div option{
     background-color: var(--navBar-color);
 }
+
 div textarea{
     height: 100px;
     resize: none;
@@ -172,7 +202,7 @@ button:hover {
     color: var(--golden-btn-text-color);
 }
 .feed-back P{
-    color:var(--text-color);
+    color:var(--text-dark);
     font-size: 10px;
     font-family: mainFont;
     text-align: center;
