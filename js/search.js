@@ -531,9 +531,31 @@ document.getElementById("search").addEventListener("click", () => {
 })
 
 let search = document.querySelector(".search-window input");
-function searchMod(){
+let cards = document.querySelectorAll(".card")
+function searchMod() {
     search.classList.toggle("light");
     document.querySelector(".search-header").classList.toggle("light")
+    cards.forEach((card) => {
+        card.classList.toggle("light")
+    })
+    // document.querySelector(".active-category").classList.toggle("light")
+    let categories = document.querySelectorAll(".categories button")
+    categories.forEach((category) => {
+        category.classList.toggle("light")
+    })
+    let text = document.querySelectorAll(".artifact-name")
+    text.forEach((txt) => {
+        txt.classList.toggle("light")
+    })
+    let textS = document.querySelectorAll(".artifacte-subtitle")
+    textS.forEach((txt) => {
+        txt.classList.toggle("light")
+    })
+    let icons = document.querySelectorAll(".active-icon")
+    icons.forEach((icon) => {
+        icon.classList.toggle("light")
+    })
+
 }
 if (search.classList.contains("light")) {
     let currenS = localStorage.setItem("searchMod", "light");
