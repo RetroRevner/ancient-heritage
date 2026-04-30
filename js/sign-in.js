@@ -62,6 +62,51 @@ function clearM(index) {
   successM[index].innerText = "";
 }
 
-function inMod(){
-   
+// function inMod(){
+//     document.querySelector(".a").classList.toggle("light");
+//     document.querySelector(".miniTitle").classList.toggle("light");
+//     document.querySelector("h1 span").classList.toggle("light");
+//     document.querySelector("h1").classList.toggle("light");
+//     document.querySelector(".line").classList.toggle("light");
+//     document.querySelector(".description").classList.toggle("light");
+//     document.querySelector(".sign-in").classList.toggle("light");
+//     document.querySelectorAll(".form-link a").forEach(el => {
+//     el.classList.toggle("light");});
+//     document.querySelector(".form-link a.active").classList.toggle("light");
+//     document.querySelector("form div").classList.toggle("light");
+//     document.querySelectorAll("div label").forEach(el => {
+//   el.classList.toggle("light")});
+//    document.querySelectorAll("div input").forEach(el => {
+//     el.classList.toggle("light");}) ;
+//     document.querySelector("button").classList.toggle("light");
+//     document.querySelector(".sign-in p").classList.toggle("light"); 
+//     document.querySelector(".sign-in p span").classList.toggle("light");  
+//     document.querySelector(".sign-in .Q a").classList.toggle("light"); 
+//     document.querySelector(".or").classList.toggle("light");
+//     document.querySelector(".or").classList.toggle("light");
+//     document.querySelectorAll(".icon").forEach(el => {
+//   el.classList.toggle("light");  
+// });
+// };
+function inMod() {
+    const elementsToToggle = [
+        ".a", ".miniTitle", "h1 span", "h1", ".line", 
+        ".description", ".sign-in", "button", ".or",
+        ".form-link a.active", "form div", ".sign-in p", 
+        ".sign-in p span", ".sign-in .Q a"
+    ];
+
+    elementsToToggle.forEach(selector => {
+        const el = document.querySelector(selector);
+        if (el) { 
+            el.classList.toggle("light");
+        }
+    });
+
+    const groups = [".form-link a", "div label", "div input", ".icon"];
+    groups.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+            el.classList.toggle("light");
+        });
+    });
 }

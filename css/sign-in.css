@@ -1,23 +1,36 @@
 :root {
-    --navBar-colo-dark-dark: #131313e6;
-    --navBar-colo-dark-light: #fef8efe6;
+    --navBar-colo-dark-dark: #131313e6;   
     --background-dark: #0a0a0a;
-    --background-light: #f8f2ea;
     --golden-color: #e7c075;
     --golden-hover-color: #bb954f;
     --golden-btn-text-color: #432f01;
-    --text-dark: #a4a2a8;
-    --text-light: #4e4635;
-    --active-text: rgb(152, 120, 34);
+    --text-dark: #a4a2a8;    
     --active-text: #987822;
-    --big-text-light: #2b240a;
     --small-text-dark: #b5aa9b;
+
+    /* --navBar-colo-dark-light: #fef8efe6;
+    --background-light: #f8f2ea;
+    --text-light: #4e4635;
+    --big-text-light: #2b240a;
     --footer-light: #e8d9ac;
     --button-light: #765700;
     --container-color-light: #fdedbf;
+    --container-second-light: #383010; */
+
+    --navBar-color-light: rgb(242, 237, 228 , 0.8);
+    --background-light: #f2ede4; 
+    --button-light:#937C63; 
+    --button-hover-light:#7D6852;  
+    --footer-light: #f2ede4; 
+
+    --container-color-light: #F9F3E5;
     --container-second-light: #383010;
+    
+  --text-light: #6B4F3A;      
+  --big-text-light: #3E2F23; 
 }
 
+  
 @font-face {
     font-family: mainFont;
     src: url(../assets/Fonts/noto-serif.regular.ttf);
@@ -37,7 +50,10 @@
     padding-top:75px ;
     position: static;
 }
-
+.a.light{
+    background-image:linear-gradient(rgb(255, 255, 255 ,.5)),
+    url(../assets/images/ChatGPT\ Image\ Apr\ 29\,\ 2026\,\ 08_47_38\ PM.png);
+}
 .miniTitle{
     color: var(--golden-color);
     font-size: 14px;
@@ -45,8 +61,15 @@
     letter-spacing: 2px;
     margin-bottom: -10px;
 }
+.miniTitle.light{
+    color: var(--text-light);
+}
 h1 span{
     color: white;
+}
+h1 span.light{
+   color:white;
+   text-shadow:1px 1px 8px var(--big-text-light);
 }
 h1{
     color: var(--golden-color);
@@ -55,9 +78,16 @@ h1{
     font-weight: 500;
     padding: 20px 0;
 }
+h1.light{
+    color: var(--big-text-light);
+    text-shadow:1px 1px 2px var(--big-text-light);
+}
 .line{
     width: 20%;
      border-top:5px solid var(--golden-color) ;
+}
+.line.light{
+     border-top:5px solid var(--big-text-light) ;
 }
 .description{
     color: var(--small-text-dark);
@@ -66,7 +96,10 @@ h1{
     padding:20px 0;
     line-height: 1.4;
 }
-.end{
+.description.light{
+    color: var(--text-light);
+}
+/* .end{
     display: flex;
     flex-direction: row;
     gap: 50px;
@@ -78,19 +111,28 @@ h1{
     color: var(--golden-color);
     font-weight: normal;
 }
+.end h4.light{
+    color: var(--big-text-light);
+}
 .end p{
     color: var(--small-text-dark);
     font-size: 14px;
     font-family: mainFont;
     letter-spacing: 2px;
 }
+.end p.light{
+    color: var(--text-light);
+} */
 .left{
     display: flex;
     justify-content: center;
-    background-color: var(--navBar-colo-dark);
+    /* background-color: var(--navBar-colo-dark); */
     padding:50px;
     width: 40%;
 }
+/* .left.light{
+   background-color: var(--navBar-color-light);
+} */
 .sign-in{
     display: flex;
     flex-direction: column;
@@ -99,6 +141,9 @@ h1{
     background-color: var(--navBar-colo-dark-dark);
     padding: 50px;
     border-radius: 20px;
+}
+.sign-in.light{
+    background-color: var(--navBar-color-light);
 }
 .form-link{
     display: flex;
@@ -114,18 +159,33 @@ h1{
     letter-spacing: 2px;
     padding: 3px;
 }
+.form-link a.light{
+   color: var(--text-light);
+}
 .form-link a:hover {
     color: var(--golden-color);
+}
+.form-link a.light:hover {
+    color:var(--big-text-light);
 }
 .form-link a.active {
     border-bottom: 2px solid var(--golden-color);
     color: var(--golden-color);
+}
+.form-link a.active.light{
+    /* border-bottom: 2px solid var(--big-text-light);
+   color: var(--big-text-light); */
+   color: red !important;
 }
 form div {
     display: flex;
     flex-direction: column;
     color: var(--small-text-dark);
     
+}
+form div.light{
+   /* color: var(--text-light); */
+    color: red;
 }
 div label{
     font-size:16px ;
@@ -134,6 +194,9 @@ div label{
     color: var(--small-text-dark);
     letter-spacing: 2px;
     padding: 5px 0;
+}
+div label.light{
+   color: var(--big-text-light);
 }
 div input{
     font-size: 16px;
@@ -146,6 +209,9 @@ div input{
     transition: 0.2s;
     width: 100%;
 }
+div input.light{
+   background-color: var(--background-light);
+}
 div input.E{
    border:  1px solid rgb(182, 28, 28);
  }
@@ -157,19 +223,13 @@ div input.E{
     text-align: left;
     font-size: 16px;
     font-family: mainFont;
-    font-weight: normal;
-   
+    font-weight: normal;  
 }
-/* .success{
-    height: 16px;
-    text-align: left;
-    font-size: 20px;
-    font-family: mainFont;
-    margin-bottom: 5px;
-} */
-
 div input:focus{
     border:0.5px solid var(--golden-color);
+}
+div input.light:focus{
+   border:0.5px solid var(--big-text-light);
 }
 button{
     padding: 10px 16px;
@@ -182,11 +242,20 @@ button{
     transition: .3s;
     margin-bottom: 25px;
 }
+button.light{
+    background-color:var(--button-light);
+    border: none;
+    color: #ffffff;
+}
 button:hover {
     cursor: pointer;
     background-color: var(--golden-hover-color);
     color: var(--golden-btn-text-color);
     transform: translateY(8px);
+}
+button.light:hover {
+  background-color: var(--button-hover-light);
+  color: white;
 }
 .sign-in P{
     color:var(--text-dark);
@@ -196,9 +265,17 @@ button:hover {
     letter-spacing: 1px;
     line-height: 1.4;
 }
+.sign-in P.light{
+   /* color: var(--text-light); */
+    color: red;
+}
 .sign-in p span{
     cursor: pointer;
     color:#c4a15f;
+}
+.sign-in p span.light{
+   /* color: var(--big-text-light); */
+    color: red;
 }
 .sign-in .Q {
     margin-top: -5px;
@@ -209,6 +286,9 @@ button:hover {
 .sign-in .Q a{
     color: var(--golden-color);
     text-decoration: none;
+}
+.sign-in .Q a.light{
+    color: var(--big-text-light);
 }
 .or{
     display: flex;
@@ -226,7 +306,11 @@ button:hover {
     margin-right: 15px;
     margin-left: 15px;
 }
-
+.or.light::after, 
+.or.light::before{
+   /* border-bottom: 1px solid var(--text-light); */
+   border-bottom: 1px solid red;
+} 
 .diff-way{
     display: flex;
     flex-direction: row;
@@ -240,8 +324,10 @@ button:hover {
     font-family: mainFont;
     transition: 0.3s;
 }
+.icon.light{
+   color: var(--button-hover-light);
+}
 .icon:hover{
-    transform: scale(1.2);
-    
+    transform: scale(1.2);  
 }
 
