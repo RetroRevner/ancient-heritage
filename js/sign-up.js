@@ -153,7 +153,7 @@ function upMod(){
 else {
     let currentUp = localStorage.setItem("UpMod", "dark");
 }
-let savedUp = localStorage.getItem("upMod");
+let savedUp = localStorage.getItem("UpMod");
 let savedMod = localStorage.getItem("theme");
 if (savedUp !== savedMod) {
     upMod();

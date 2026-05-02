@@ -6,11 +6,11 @@ if (userData.Name ) {
     document.getElementById("userEmail").innerText = userData.Email;
 }
 
-// function removeFromLocal(key, id) {
-//     let savedItems = JSON.parse(localStorage.getItem(key)) || [];
-//     let updatedItems = savedItems.filter(el => el.id !== id);
-//     localStorage.setItem(key, JSON.stringify(updatedItems));
-// }
+function removeFromLocal(key, id) {
+    let savedItems = JSON.parse(localStorage.getItem(key)) || [];
+    let updatedItems = savedItems.filter(el => el.id !== id);
+    localStorage.setItem(key, JSON.stringify(updatedItems));
+}
 
 document.querySelector(".btn").onclick = ()=>{
     let box = document.createElement("div");
@@ -49,7 +49,7 @@ document.querySelector(".btn").onclick = ()=>{
 
     
     document.querySelector(".no").onclick = ()=>{document.querySelector("#pop").removeChild(box);};
-    document.querySelector(".yes").onclick = ()=>{/*localStorage.clear(user);*/
+    document.querySelector(".yes").onclick = ()=>{localStorage.clear(user);
         window.location.href = "../index.html";
  };
     
