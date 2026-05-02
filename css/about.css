@@ -55,9 +55,10 @@
 }
 
 .header h1 {
-    color: #fff;
+    color:#ffffff !important;
     font-size: 60px;
     line-height: 1.1;
+    transition: 0.4s;
     font-weight: normal;
 }
 
@@ -68,7 +69,8 @@
 
 .description {
     max-width: 400px;
-    color: var(--small-text-dark);
+    color: var(--small-text-dark) !important;
+    transition: 0.4s;
     font-size: 18px;
     line-height: 1.6;
 }
@@ -108,6 +110,7 @@
     /*أي حاجة تخرج بره حدود الكارت (زي صورة كبيرة) تختفي*/
     margin: 50px 0;
     z-index: 11;
+   
 }
 
 .image-card {
@@ -146,14 +149,16 @@
 }
 
 .team-cards h3 {
-    color: #fff;
+    color: #ffffff !important;
     font-size: 22px;
     font-weight: normal;
     margin-bottom: 5px;
+    transition: 0.4s;
 }
 
 .team-cards .work {
-    color: var(--small-text-dark);
+    color: var(--small-text-dark) !important;
+    transition: 0.4s;
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -198,7 +203,8 @@
 }
 
 .box h2 {
-    color: #fff;
+    color: #ffffff !important;
+    transition: 0.4s;
     font-size: 45px;
     font-style: italic;
     line-height: 1.2;
@@ -207,7 +213,8 @@
 }
 
 .description-text {
-    color: var(--text-dark);
+    color: var(--small-text-dark) !important;
+    transition: 0.4s;
     /* لون النص الهادئ */
     font-size: 19px;
     line-height: 1.8;
@@ -282,4 +289,44 @@
     .join-us {
         padding: 80px 5%;
     }
+}
+
+
+body.light {
+    background-color: var(--background-light) !important;
+}
+
+/* تحويل العناوين للون الداكن المخصص للثيم الفاتح */
+body.light .header h1, 
+body.light .team-cards h3, 
+body.light .box h2 {
+    color: var(--big-text-light) !important;
+}
+
+/* تحويل النصوص الوصفية */
+body.light .description, 
+body.light .description-text,
+body.light .team-cards .work {
+    color: var(--text-light) !important;
+}
+
+/* الكروت وتنسيقها في الوضع الفاتح */
+body.light .image-card {
+    background-color: var(--container-color-light);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light .team-link {
+    color: var(--button-light) !important;
+}
+
+/* تعديل الـ Shadow ليتناسب مع الخلفية الفاتحة */
+body.light .shadow {
+    background: radial-gradient(circle, transparent 30%, rgba(78, 70, 53, 0.15)) !important;
+}
+
+/* تعديل الفوتر */
+body.light .footer {
+    background-color: var(--footer-light) !important;
+    color: var(--big-text-light) !important;
 }
