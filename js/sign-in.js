@@ -28,10 +28,10 @@ let storeData = localStorage.getItem("user")
     let passwordV =  document.forms["signIn"]["Password"].value;
     let error2 = document.getElementsByClassName("error")[1];
     let input = document.getElementsByTagName("input");
-    let passwordRegex = /^(?=.[A-Za-z])(?=.\d)[A-Za-z\d]{8,}$/; //بيقبل حروف وارقام 
+    let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/; //بيقبل حروف وارقام 
 
     if (passwordV.trim() == "" ){
-       error2.innerText = "✖️ Password is required";
+       error2.innerText = "✖️ Password is required.";
        error2.style.color = "rgb(182, 28, 28)" ;
         input[1].classList.add("E");
       return false ;
