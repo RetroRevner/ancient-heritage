@@ -9,7 +9,6 @@
     --golden-btn-text-color: #432f01;
     --text-dark: #a4a2a8;
     --text-light: #4e4635;
-    --active-text: rgb(152, 120, 34);
     --active-text: #987822;
     --big-text-light: #2b240a;
     --small-text-dark: #b5aa9b;
@@ -26,7 +25,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.8))100%;
+    background: radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.8)100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -225,15 +224,14 @@
 }
 
 .highlight {
-    color: var(--golden-color);
-    /* تلوين الكلمات المفتاحية باللون الذهبي */
+    color: var(--golden-color);/*لون النص اللي عامله highlight*/
     font-weight: bold;
 }
 
 .join-btn {
     background-color: transparent;
     /* خلفية شفافة */
-    border: 1px none var(--golden-color);
+    border: 1px solid var(--golden-color);
     /* إطار ذهبي رفيع */
     color: var(--golden-color);
     /* لون النص ذهبي */
@@ -263,20 +261,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
-/*الموبايل: صورة واحدة في السطر*/
-@media (max-width: 600px) {
-    .team-grid {
-        grid-template-columns: 1fr;
-        padding: 40px 20px;
-        /*تقليل الهوامش قليلاً*/
-    }
-
-    .header h1 {
-        font-size: 40px;
-    }
-}
-
 @media (max-width: 768px) {
     .box h2 {
         font-size: 32px;
@@ -290,42 +274,48 @@
         padding: 80px 5%;
     }
 }
+/*الموبايل: صورة واحدة في السطر*/
+@media (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+        /*بقلل الجوانب (الهوامش ) شوية*/
+    }
 
-
+    .header h1 {
+        font-size: 40px;
+    }
+}
 body.light {
     background-color: var(--background-light) !important;
 }
-
-/* تحويل العناوين للون الداكن المخصص للثيم الفاتح */
-body.light .header h1, 
-body.light .team-cards h3, 
-body.light .box h2 {
+body.light .header h1, body.light .team-cards h3, body.light .box h2  {/*بتغير لون العناوين للون غامق عشان يبان في ل light theme*/
     color: var(--big-text-light) !important;
 }
-
-/* تحويل النصوص الوصفية */
-body.light .description, 
-body.light .description-text,
-body.light .team-cards .work {
+body.light .description, body.light  .description-text,body.light .team-cards .work {/*بتغير لون النصوص بتاعت ال description*/
     color: var(--text-light) !important;
 }
-
-/* الكروت وتنسيقها في الوضع الفاتح */
-body.light .image-card {
+body.light .image-card {/* شكل الكروت في ال light theme*/
     background-color: var(--container-color-light);
     border-color: rgba(0, 0, 0, 0.1);
 }
-
-body.light .team-link {
+body.light .team-link {/*لون الينك بتاع صفحة ال linkedin*/
     color: var(--button-light) !important;
 }
-
-/* تعديل الـ Shadow ليتناسب مع الخلفية الفاتحة */
-body.light .shadow {
+body.light .shadow {/* عدلت الظل عشان يبقي متناسق مع لون الخلفية*/
     background: radial-gradient(circle, transparent 30%, rgba(78, 70, 53, 0.15)) !important;
 }
-
-/* تعديل الفوتر */
+/*الجزء دة خاص بأن الصورة تبقي الوان في اال light و تتحول الي darkلما اقف عليها */
+body.light .image-card img {/* هنا عشان الصورة تظهر الوان*/
+    filter: grayscale(0%) contrast(1);/* التأثير دة هو اللي بيخليلي الصورة بألوانها الاصلية*/ 
+    opacity: 1;
+    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+body.light .team-cards:hover img {/* هنا عشان احول الصور الي ابيض و اسود*/
+    filter: grayscale(100%)  contrast(1.2);/* دة اللي بيديني تأثير الابيض و الاسود لما اقف علي اصورة*/
+    transform: scale(1.05);/* الخاصية دي بتخلي الصورة تكبر شوية لما اقف عليها*/
+}
+/*شكل ال footer في ال light*/
 body.light .footer {
     background-color: var(--footer-light) !important;
     color: var(--big-text-light) !important;
