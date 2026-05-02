@@ -118,7 +118,7 @@ function inMod() {
 else {
     let currentIn = localStorage.setItem("InMod", "dark");
 }
-let savedIn = localStorage.getItem("inMod");
+let savedIn = localStorage.getItem("InMod");
 let savedMod = localStorage.getItem("theme");
 if (savedIn !== savedMod) {
     inMod();
