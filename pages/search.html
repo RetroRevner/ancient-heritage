@@ -10,6 +10,7 @@
 
     <script src="https://kit.fontawesome.com/728f1f9039.js" crossorigin="anonymous"></script>
     <!-- Icons file -->
+    <link rel="stylesheet" href="../css/all.min.css">
 
     <link rel="stylesheet" href="../css/search.css">
 
@@ -72,18 +73,24 @@
     </nav>
     <main>
         <div class="search-window">
-            <input type="search" id="search-input" placeholder="Search Artifact Name Here...">
+            <input type="search" id="search-input" placeholder="Search By Artifact Name Or Museum...">
             <button id="search">Excute Search</button>
         </div>
-        <div class="categories">
-            <button class="button-value" onclick="filterArtifacts('All Museums')">All Museums</button>
-            <button class="button-value" onclick="filterArtifacts('Grand Egyptian Museum')">Grand Egyptian
-                Museum</button>
-            <button class="button-value" onclick="filterArtifacts('Egyptian Museum')">Egyptian Museum</button>
-            <button class="button-value" onclick="filterArtifacts('NMEC')">NMEC</button>
-            <button class="button-value" onclick="filterArtifacts('Coptic Musuem')">Coptic Musuem</button>
-            <button class="button-value" onclick="filterArtifacts('Islamic Art Museum')">Islamic Art Museum</button>
-            <button class="button-value" onclick="filterArtifacts('Other')">Other</button>
+        <div class="filters">
+            <div class="categories">
+                <button class="button-value" onclick="filterArtifacts('All Museums')">All Museums</button>
+                <button class="button-value" onclick="filterArtifacts('Grand Egyptian Museum')">Grand Egyptian
+                    Museum</button>
+                <button class="button-value" onclick="filterArtifacts('Egyptian Museum')">Egyptian Museum</button>
+                <button class="button-value" onclick="filterArtifacts('NMEC')">NMEC</button>
+                <button class="button-value" onclick="filterArtifacts('Coptic Musuem')">Coptic Musuem</button>
+                <button class="button-value" onclick="filterArtifacts('Islamic Art Museum')">Islamic Art Museum</button>
+                <button class="button-value" onclick="filterArtifacts('Other')">Other</button>
+            </div>
+            <div class="filter-show">
+                <span id="grid" onclick="showMethodActive('grid'); cardDisplay('grid') "><i class="fa-solid fa-grip"></i> Grid</span>
+                <span id="list" onclick="showMethodActive('list'); cardDisplay('list') "><i class="fa-solid fa-list"></i> List</span>
+            </div>
         </div>
         <h1 class="search-header">Search Results:</h1>
         <div id="artifacts-container">

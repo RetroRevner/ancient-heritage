@@ -13,8 +13,8 @@
     --active-text: #987822;
     --big-text-light: #2b240a;
     --small-text-dark: #b5aa9b;
-    --footer-light: #e8d9ac;
-    --button-light: #765700;
+    --footer-light: #f2ede4;
+    --button-light: #937C63;
     --card-background-color:#353534;
     --container-color-light: #fdedbf;
     --container-second-light: #383010;
@@ -34,6 +34,10 @@
     padding-top:75px ;
     gap: 100px;
 }
+.a.light{
+    background-image: linear-gradient(rgb(255, 255, 255 ,.5)),
+    url(../assets/images/feedback\ light.jpeg);
+}
 .miniTitle{
     color: var(--golden-color);
     font-size: 14px;
@@ -41,8 +45,15 @@
     letter-spacing: 2px;
     margin-bottom: -10px;
 }
+.miniTitle.light{
+    color: var(--text-light);
+}
 h1 span{
     color: white;
+}
+h1 span.light{
+    color: white;
+    text-shadow: 1px 1px 8px var(--big-text-light);
 }
 h1{
     color: var(--golden-color);
@@ -51,9 +62,16 @@ h1{
     font-weight: 500;
     padding: 20px 0;
 }
+h1.light{
+    color: var(--big-text-light);
+    text-shadow: 1px 1px 2px var(--big-text-light);
+}
 .line{
     width: 20%;
-     border-top:5px solid var(--golden-color) ;
+    border-top:5px solid var(--golden-color) ;
+}
+.line.light{
+    border-top: 5px solid var(--big-text-light);
 }
 .description{
     color: var(--small-text-dark);
@@ -62,6 +80,9 @@ h1{
     padding:20px 0;
     line-height: 1.4;
    max-width: 600px;
+}
+.description.light{
+    color: var(--text-light);
 }
 .end{
     display: flex;
@@ -79,17 +100,26 @@ a{
     text-transform:uppercase;
     letter-spacing: 1px;
 }
-
+.head-contact.light{
+    color: var(--text-light);
+}
 .main-contact{
     color: #b5aa9b;
     font-size: 18px;
     margin-bottom: 30px;
+}
+.main-contact.light{
+    color: white;
+    text-shadow: 1px 1px 8px var(--big-text-light);
 }
 li{
     list-style-type: none;
     border-left: 3px solid rgba(255, 255, 255, 0.15);
     padding-left: 20px;
     margin-bottom: 15px;
+}
+li.light{
+    border-left: 3px solid var(--big-text-light);
 }
 .left{
     margin:50px 0;
@@ -104,7 +134,7 @@ li{
 }
 
 .left.light{
-    background-color: var(--container-second-light);
+    background-color: var(--navBar-color-light);
 }
 
 .feed-back{
@@ -126,6 +156,9 @@ div label{
     letter-spacing: 2px;
     padding: 5px 0;
 }
+div label.light{
+    color: var(--text-light);
+}
 div input ,
 div textarea{
     font-size: 16px;
@@ -138,7 +171,13 @@ div textarea{
     transition: 0.2s;
     width: 100%;
 }
-.type {
+div input.light ,
+div select.light ,
+div textarea.light{
+    background-color: var(--background-light);
+    color:#674f3e;
+}
+.type{
     font-size: 16px;
     font-family: mainFont;
     color: var(--text-dark);
@@ -151,9 +190,14 @@ div textarea{
     margin-bottom: 15px;
 }
 div option{
-    background-color: var(--navBar-color);
+    background-color: black;
 }
-
+div option.light{
+    background-color: var(--navBar-color-light);
+}
+div option:focus{
+    background-color: aliceblue;
+}
 div textarea{
     height: 100px;
     resize: none;
@@ -193,13 +237,21 @@ button{
     font-family: mainFont;
     width: 100%;
     letter-spacing: 2px;
-    margin: 15px 0;
-    
+    margin: 15px 0;   
+}
+button.light{
+    background-color:var(--button-light);
+    border: none;
+    color: #ffffff;
 }
 button:hover {
     cursor: pointer;
     background-color: var(--golden-hover-color);
     color: var(--golden-btn-text-color);
+}
+button.light:hover {
+  background-color: var(--button-hover-light);
+  color: white;
 }
 .feed-back P{
     color:var(--text-dark);
@@ -208,4 +260,7 @@ button:hover {
     text-align: center;
     letter-spacing: 1px;
     line-height: 1.4;
+}
+.feed-back P.light{
+    color: var(--button-light);
 }

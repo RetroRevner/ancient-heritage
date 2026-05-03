@@ -5,9 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        :root {
+            --black: #000;
+            --navBar-color-dark: #131313e6;
+            --navBar-color-light: #f2ede4cc;
+            --background-dark: #0a0a0a;
+            --background-light: #f2ede4;
+            --golden-color: #e7c075;
+            --golden-hover-color: #bb954f;
+            --text-dark: #a4a2a8;
+            --active-text: rgb(152, 120, 34);
+            --text-light: #6B4F3A;
+            --big-text-light: #3E2F23;
+            --active-text: #987822;
+            --small-text-dark: #b5aa9b;
+            --card-background-color: #353534;
+            --container-color-light: #fdedbf;
+            --container-second-light: #383010;
+            --button-light: #937C63;
+            --button-hover-light: #7D6852;
+            --footer-light: #f2ede4;
+            --container-color-light: #F9F3E5;
+            --container-second-light: #383010;
+            --information-cnt: #181818;
+        }
+
         @font-face {
             font-family: main-font;
             src: url(../assets/Fonts/noto-serif.regular.ttf);
+        }
+
+        @font-face {
+            font-family: bold-font;
+            src: url(../assets/Fonts/noto-serif.bold-italic.ttf);
         }
 
         * {
@@ -28,23 +58,28 @@
             user-select: none;
         }
 
+        body.grap {
+            cursor: grab;
+        }
+
+        body.grap:active {
+            cursor: grabbing;
+        }
+
         #iframe-container {
             transform-origin: left top;
             transition: 0.4s;
         }
 
-        #map-dark {
+        #map {
             position: absolute;
             width: 100%;
             opacity: 1;
             transition: 0.4s;
         }
 
-        #map-light {
-            position: absolute;
-            width: 100%;
-            opacity: 0;
-            transition: 0.4s;
+        #map.light {
+            filter: invert(100%) sepia(0.6) saturate(80%) brightness(90%) contrast(110%);
         }
 
         #zoom-in:hover {
@@ -55,12 +90,20 @@
             background-color: #b39254;
         }
 
+        #zoom-in.light:active {
+            background-color: var(--button-hover-light);
+        }
+
         #zoom-out:hover {
             transform: scale(0.94)
         }
 
         #zoom-out:active {
             background-color: #b39254;
+        }
+
+        #zoom-out.light:active {
+            background-color: var(--button-hover-light);
         }
 
         #zoom-btn {
@@ -74,386 +117,197 @@
 
         #zoom-btn button {
             position: sticky;
-            width: 5vw;
-            height: 5vw;
-            background-color: #c5a059;
+            width: 50px;
+            height: 50px;
+            background-color: var(--golden-color);
             border-radius: 20%;
             border: none;
-            font-size: 4vw;
+            font-size: 40px;
             color: #4e3700;
             cursor: pointer;
             transition: 0.3s;
         }
 
-        #pyramid {
-            position: absolute;
-            display: flex;
-            width: 7%;
-            cursor: pointer;
-            margin-left: 49%;
-            margin-top: 16%;
-            opacity: 1;
-            transition: 0.4s;
+        #zoom-btn button.light {
+            background-color: var(--button-light);
+            color: white;
         }
 
-        #pyramid2 {
+        #icons-container img {
             position: absolute;
             display: flex;
-            width: 7%;
-            filter: drop-shadow(0 0 20px #281d14);
             cursor: pointer;
-            margin-left: 49%;
-            margin-top: 16%;
+            transition: 0.3s;
+        }
+
+        #icons-container img.light {
+            filter: brightness(0.4) sepia(0.8) saturate(80%);
+        }
+
+        #icons-container img:hover,
+        #icons-container img.active {
+            filter: drop-shadow(0 0 10px #b39254);
+            scale: 1.1;
+        }
+
+        #icons-container img.light:hover,
+        #icons-container img.light.active {
+            filter: brightness(0.4) sepia(0.8) saturate(80%) drop-shadow(0 0 10px #362621);
+            scale: 1.1;
+        }
+
+        #icons-container p {
+            position: absolute;
+            color: #e7c075;
+            font-size: 1.5vw;
+            text-align: center;
+            text-shadow: 0 0 10px #e7c075;
+            transition: 0.3s;
             opacity: 0;
+            font-family: bold-font;
+        }
+
+        #icons-container p.light {
+            color: #5D4037;
+            text-shadow: 0 0 20px #362621;
+        }
+
+        #pyramid {
+            width: 7%;
+            margin-left: 48%;
+            margin-top: 16%;
         }
 
         #pyramid-p {
-            position: absolute;
-            color: #e7c075;
             margin-top: 21%;
-            margin-left: 50%;
-            font-family: main-font;
-            font-size: 14px;
-            opacity: 0;
-            transition: 0.4s;
-            text-shadow: 0 0 10px #e7c075;
-            text-align: center;
+            margin-left: 48%;
         }
 
-        #pyramid:hover + #pyramid-p, #pyramid.active + #pyramid-p {
+        #pyramid:hover+#pyramid-p,
+        #pyramid.active+#pyramid-p {
             opacity: 1;
         }
 
-        #pyramid:hover,
-        #pyramid.active {
-            filter: drop-shadow(0 0 10px #b39254);
-            scale: 1.1;
-        }
 
         #siwa {
-            position: absolute;
-            display: flex;
             width: 4.5%;
-            cursor: pointer;
             margin-top: 18%;
             margin-left: 7%;
-            opacity: 1;
-            transition: 0.4s;
-        }
-
-        #siwa2 {
-            position: absolute;
-            display: flex;
-            width: 4.5%;
-            filter: drop-shadow(0 0 10px #281d14);
-            cursor: pointer;
-            margin-top: 18%;
-            margin-left: 7%;
-            opacity: 0;
         }
 
         #siwa-p {
-            position: absolute;
-            color: #e7c075;
-            text-shadow: 0 0 10px #e7c075;
             margin-top: 21%;
             margin-left: 11%;
-            font-family: main-font;
-            font-size: 14px;
-            opacity: 0;
-            transition: 0.4s;
         }
 
-        #siwa:hover + #siwa-p , #siwa.active + #siwa-p {
+        #siwa:hover+#siwa-p,
+        #siwa.active+#siwa-p {
             opacity: 1;
-        }
-
-        #siwa:hover,
-        #siwa.active {
-            filter: drop-shadow(0 0 10px #b39254);
-            scale: 1.1;
         }
 
         #bahariya {
-            position: absolute;
-            display: flex;
             width: 4.5%;
-            cursor: pointer;
             margin-top: 25%;
             margin-left: 30%;
-            opacity: 1;
-            transition: 0.4s;
-        }
-
-        #bahariya2 {
-            position: absolute;
-            display: flex;
-            width: 4.5%;
-            filter: drop-shadow(0 0 10px #281d14);
-            cursor: pointer;
-            margin-top: 25%;
-            margin-left: 30%;
-            opacity: 0;
         }
 
         #bahariya-p {
-            position: absolute;
-            color: #e7c075;
-            text-shadow: 0 0 10px #e7c075;
             margin-top: 28%;
             margin-left: 34%;
-            font-family: main-font;
-            font-size: 14px;
-            opacity: 0;
-            transition: 0.4s;
         }
 
-        #bahariya:hover + #bahariya-p, #bahariya.active + #bahariya-p {
+        #bahariya:hover+#bahariya-p,
+        #bahariya.active+#bahariya-p {
             opacity: 1;
-        }
-
-        #bahariya:hover,
-        #bahariya.active {
-            filter: drop-shadow(0 0 10px #b39254);
-            scale: 1.1;
         }
 
         #farafra {
-            position: absolute;
-            display: flex;
             width: 4.5%;
-            cursor: pointer;
             margin-top: 33%;
             margin-left: 24%;
-            opacity: 1;
-            transition: 0.4s;
-        }
-        
-        #farafra2 {
-            position: absolute;
-            display: flex;
-            width: 4.5%;
-            filter: drop-shadow(0 0 10px #281d14);
-            cursor: pointer;
-            margin-top: 33%;
-            margin-left: 24%;
-            opacity: 0;
             transition: 0.4s;
         }
 
         #farafra-p {
-            position: absolute;
-            color: #e7c075;
-            text-shadow: 0 0 10px #e7c075;
             margin-top: 36%;
             margin-left: 18%;
-            font-family: main-font;
-            font-size: 14px;
-            opacity: 0;
-            transition: 0.4s;
         }
 
-        #farafra:hover + #farafra-p, #farafra.active + #farafra-p {
+        #farafra:hover+#farafra-p,
+        #farafra.active+#farafra-p {
             opacity: 1;
         }
-
-        #farafra:hover,
-        #farafra.active {
-            filter: drop-shadow(0 0 10px #b39254);
-            scale: 1.1;
-        }
-
 
         #dakhla {
-            position: absolute;
-            display: flex;
             width: 4.5%;
-            cursor: pointer;
             margin-top: 41%;
             margin-left: 37%;
-            opacity: 1;
-            transition: 0.4s;
-        }
-
-        #dakhla2 {
-            position: absolute;
-            display: flex;
-            width: 4.5%;
-            filter: drop-shadow(0 0 10px #281d14);
-            cursor: pointer;
-            margin-top: 41%;
-            transition: 0.4s;
-            margin-left: 37%;
-            opacity: 0;
         }
 
         #dakhla-p {
-            position: absolute;
-            color: #e7c075;
-            text-shadow: 0 0 10px #e7c075;
             margin-top: 44%;
             margin-left: 31%;
-            font-family: main-font;
-            font-size: 14px;
-            opacity: 0;
-            transition: 0.4s;
         }
 
-        #dakhla:hover + #dakhla-p, #dakhla.active + #dakhla-p {
+        #dakhla:hover+#dakhla-p,
+        #dakhla.active+#dakhla-p {
             opacity: 1;
-        }
-
-        #dakhla:hover,
-        #dakhla.active {
-            filter: drop-shadow(0 0 10px #b39254);
-            scale: 1.1;
         }
 
         #kharga {
-            position: absolute;
-            display: flex;
             width: 4.5%;
-            cursor: pointer;
             margin-top: 41%;
             margin-left: 46%;
-            opacity: 1;
-            transition: 0.4s;
-        }
-
-        #kharga2 {
-            position: absolute;
-            display: flex;
-            width: 4.5%;
-            filter: drop-shadow(0 0 10px #281d14);
-            cursor: pointer;
-            margin-top: 41%;
-            margin-left: 46%;
-            opacity: 0;
-            transition: 0.4s;
         }
 
         #kharga-p {
-            position: absolute;
-            color: #e7c075;
-            text-shadow: 0 0 10px #e7c075;
             margin-top: 44%;
             margin-left: 50%;
-            font-family: main-font;
-            font-size: 14px;
-            opacity: 0;
-            transition: 0.4s;
         }
 
-        #kharga:hover + #kharga-p, #kharga.active + #kharga-p {
+        #kharga:hover+#kharga-p,
+        #kharga.active+#kharga-p {
             opacity: 1;
-        }
-
-        #kharga:hover,
-        #kharga.active {
-            filter: drop-shadow(0 0 10px #b39254);
-            scale: 1.1;
         }
 
         #abu-simbel {
-            position: absolute;
-            display: flex;
             width: 5%;
-            cursor: pointer;
             margin-top: 59%;
             margin-left: 58%;
-            opacity: 1;
-        }
-
-        #abu-simbel2 {
-            position: absolute;
-            display: flex;
-            width: 5%;
-            filter: drop-shadow(0 0 10px #513a27b0);
-            cursor: pointer;
-            margin-top: 59%;
-            margin-left: 58%;
-            opacity: 0;
         }
 
         #abu-simbel-p {
-            position: absolute;
-            color: #e7c075;
-            text-shadow: 0 0 10px #e7c075;
             margin-top: 65%;
-            margin-left: 57%;
-            font-family: main-font;
-            font-size: 14px;
-            opacity: 0;
-            transition: 0.2s;
+            margin-left: 56%;
         }
 
-        #abu-simbel:hover + #abu-simbel-p, #abu-simbel.active + #abu-simbel-p {
+        #abu-simbel:hover+#abu-simbel-p,
+        #abu-simbel.active+#abu-simbel-p {
             opacity: 1;
-        }
-
-        #abu-simbel:hover,
-        #abu-simbel.active {
-            filter: drop-shadow(0 0 10px #b39254);
-            scale: 1.1;
         }
 
         #karnak {
-            position: absolute;
-            display: flex;
             width: 4%;
-            cursor: pointer;
             margin-top: 42%;
-            margin-left: 65%;
-            opacity: 1;
-            transition: 0.2s;
-        }
-
-        #karnak:hover,
-        #karnak.active {
-            filter: drop-shadow(0 0 10px #b39254);
-            scale: 1.1;
-        }
-
-
-        #karnak2 {
-            position: absolute;
-            display: flex;
-            width: 4%;
-            filter: drop-shadow(0 0 10px #281d14);
-            cursor: pointer;
-            margin-top: 42%;
-            margin-left: 65%;
-            opacity: 0;
+            margin-left: 65%
         }
 
         #karnak-p {
-            position: absolute;
-            color: #e7c075;
-            text-shadow: 0 0 10px #e7c075;
             margin-top: 47%;
-            margin-left: 64%;
-            font-family: main-font;
-            font-size: 14px;
-            opacity: 0;
-            transition: 0.2s;
+            margin-left: 63%;
         }
 
-        #karnak:hover + #karnak-p, #karnak.active + #karnak-p {
+        #karnak:hover+#karnak-p,
+        #karnak.active+#karnak-p {
             opacity: 1;
-        }
-
-        #icons-container img {
-            transition: 0.2s;
         }
     </style>
 </head>
 
-<body>
+<body class="dragscroll">
     <div id="iframe-container">
-        <img src="../assets/images/Map-imgs/dark-map.jpg" id="map-dark" draggable="false">
-        <img src="../assets/images/Map-imgs/white-map.jpg" id="map-light" draggable="false">
+        <img src="../assets/images/Map-imgs/dark-map.jpg" id="map" draggable="false">
         <div id="icons-container">
-            <img src="../assets/images/Map-imgs/pyramids2.png" id="pyramid2" draggable="false">
             <img src="../assets/images/Map-imgs/pyramids.png" id="pyramid" onclick="selected(this.id)"
                 draggable="false">
             <p id="pyramid-p">
@@ -461,26 +315,19 @@
                 <br>
                 Pyramid
             </p>
-            <img src="../assets/images/Map-imgs/Trees2.png" id="siwa2" draggable="false">
             <img src="../assets/images/Map-imgs/Trees.png" id="siwa" onclick="selected(this.id)" draggable="false">
             <p id="siwa-p">Siwa</p>
-            <img src="../assets/images/Map-imgs/Trees2.png" id="bahariya2" draggable="false">
             <img src="../assets/images/Map-imgs/Trees.png" id="bahariya" onclick="selected(this.id)" draggable="false">
             <p id="bahariya-p">Bahariya</p>
-            <img src="../assets/images/Map-imgs/Trees2.png" id="farafra2" draggable="false">
             <img src="../assets/images/Map-imgs/Trees.png" id="farafra" onclick="selected(this.id)" draggable="false">
             <p id="farafra-p">Farafra</p>
-            <img src="../assets/images/Map-imgs/Trees2.png" id="dakhla2" draggable="false">
             <img src="../assets/images/Map-imgs/Trees.png" id="dakhla" onclick="selected(this.id)" draggable="false">
             <p id="dakhla-p">Dakhla</p>
-            <img src="../assets/images/Map-imgs/Trees2.png" id="kharga2" draggable="false">
             <img src="../assets/images/Map-imgs/Trees.png" id="kharga" onclick="selected(this.id)" draggable="false">
             <p id="kharga-p">Kharga</p>
-            <img src="../assets/images/Map-imgs/big-temple2.png" id="abu-simbel2" draggable="false">
             <img src="../assets/images/Map-imgs/big-temple.png" id="abu-simbel" onclick="selected(this.id)"
                 draggable="false">
             <p id="abu-simbel-p">Abu Simbel</p>
-            <img src="../assets/images/Map-imgs/small-temple2.png" id="karnak2" draggable="false">
             <img src="../assets/images/Map-imgs/small-temple.png" id="karnak" onclick="selected(this.id)"
                 draggable="false">
             <p id="karnak-p">El Karnak</p>
@@ -491,6 +338,7 @@
         <button id="zoom-out" onclick="zoomout()">-</button>
     </div>
     <script src="../js/map.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragscroll/0.0.8/dragscroll.min.js"></script>
 </body>
 
 </html>

@@ -47,14 +47,17 @@ button{
 }
 
 :root {
+    --black: #000;
     --navBar-color-dark: #131313e6;
-    --navBar-color-light: #fef8efe6;
+    --navBar-color-light: #f2ede4cc;
     --background-dark: #0a0a0a;
     --golden-color: #e7c075;
     --golden-hover-color: #bb954f;
     --golden-btn-text-color: #432f01;
     --text-dark: #a4a2a8;
     --active-text: rgb(152, 120, 34);
+    --text-light: #6B4F3A;
+    --big-text-light: #3E2F23;
     --active-text: #987822;
     --small-text-dark: #b5aa9b;
     --table_card_background: #353534;
@@ -71,6 +74,7 @@ button{
     --small-text-light: #a47231 ;
     --big-text-light: #3E2F23; 
 }
+
 
 .heading {
     display: flex;
@@ -162,68 +166,66 @@ video {
     display: block;
     border-radius: 20px;
     margin: 10px;
-    opacity: 0; /* الفيديو مخفي في البداية */
+    opacity: 0; 
     transition: opacity 0.4s ease, transform 0.3s ease, filter 0.3s ease;
     background-color: transparent;
 }
 video:hover {
-    opacity: 1; /* إظهار الفيديو عند الوقوف عليه */
+    opacity: 1; 
     transform: scale(1.02);
     filter: grayscale(0%);
 }
 
 /* ====================================================================== */
-/* 1. تنسيق الحاوية الجديدة للفيديو */
+
 .video-wrapper {
-    position: relative; /* ضروري لجعل العناصر داخلها تترتب فوق بعضها */
+    position: relative; 
     width: 100%;
-    height: 385px; /* نفس الارتفاع الذي اخترتيه */
-    overflow: hidden; /* لمنع أي جزء زائد من الخروج */
-    border-radius: 20px; /* لضمان أن الحاوية والصورة والفيديو لهم زوايا دائرية */
+    height: 385px; 
+    overflow: hidden; 
+    border-radius: 20px;
     cursor: pointer;
-    margin-bottom: 10px; /* مسافة بسيطة قبل النص */
+    margin-bottom: 10px; 
     
-    /* التأثيرات الحركية ننقلها هنا لتشمل الصورة والفيديو */
+    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 2. تنسيق الصورة الثابتة (Poster) */
+
 .video-wrapper img.static-poster {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* لملء المساحة بدون تشويه */
-    position: absolute; /* ضروري لتترتب فوق الـ video */
+    object-fit: cover; 
+    position: absolute; 
     top: 0;
     left: 0;
-    z-index: 2; /* لتكون الصورة في الخلفية */
-    display: block; /* ضمان الظهور */
+    z-index: 2; 
+    display: block;
 }
 
-/* 3. تنسيق الفيديو (الآن هو شفاف فوق الصورة) */
 .video-wrapper video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute; /* فوق الصورة */
+    position: absolute; 
     top: -8px;
     left:  -8px;
-    z-index: 2; /* فوق الصورة الثابتة */
+    z-index: 2; 
     
-    /* في الحالة العادية، الفيديو شفاف ومائل للرمادي */
+
     opacity: 0;
     filter: grayscale(40%);
     
-    /* انتقال ناعم جداً للظهور */
+
     transition: opacity 0.4s ease, filter 0.3s ease;
 }
 
-/* 4. عند الـ Hover على "الحاوية"، نجعل الفيديو يظهر ويزداد إشراقاً */
+
 .video-wrapper:hover video {
-    opacity: 1; /* الفيديو يظهر فوق الصورة */
+    opacity: 1; 
     filter: grayscale(0%);
 }
 
-/* 5. تأثير التكبير للحاوية بالكامل */
 .video-wrapper:hover {
     transform: scale(1.02);
 }
@@ -426,16 +428,16 @@ video:hover {
     color: var(--golden-color);  
 }
 
-/* عندما يتم عمل hover على الصف، نغير تنسيق النص بالداخل */
+
 .table-museum tfoot tr:hover #all-m {
-    /* تغيير التدرج اللوني للنص ليكون أبيض أو أفتح عند الـ hover */
+    
     background: linear-gradient(to right, #ffffff, #fffdf0);
     
-    /* الحفاظ على تأثير الـ clip ليبقى التدرج داخل النص */
+    
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    /* زيادة التوهج عند الـ hover */
+   
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
 }
 
@@ -509,15 +511,14 @@ button.light{
     background-image: linear-gradient(to right,rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
         url("../assets/images/nmec/The National Museum of Egyptian Civilization, Egypt.jpg");
 }
-.table-museum tfoot tr:hover #all-m.light {
-    /* تغيير التدرج اللوني للنص ليكون أبيض أو أفتح عند الـ hover */
+.table-museum tfoot tr:hover #all-m.light { 
+   
     background: linear-gradient(to right, var(--text-light) 0%,var(--small-text-light) 50%, var(--golden-hover-color) 100%);
     
-    /* الحفاظ على تأثير الـ clip ليبقى التدرج داخل النص */
+   
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    /* زيادة التوهج عند الـ hover */
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
 }
 .table-museum th.light {

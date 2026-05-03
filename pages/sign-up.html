@@ -77,39 +77,29 @@
                 <p class="description">Access the world's most exclusive digital reliquary.<br>
                     Secure your identity to unlock provenance records,<br>
                     high-fidelity artifact scans, and scholarly research.</p>
-                <div class="end">
-                    <div>
-                        <h4>12.5k</h4>
-                        <p>ARTIFACTS DIGITIZED</p>
-                    </div>
-                    <div>
-                        <h4>85</h4>
-                        <p>PARTICIPATING MUSEUMS</p>
-                    </div>
-                </div>
             </section>
             <section class="left">
                 <form name="signUp" class="sign-up" method="post" onsubmit="dataForm(event)">
                     <!-- <h6 class="success"></h6> -->
                     <div class="form-link">
-                        <a href="sign-in.html">SIGN IN</a>
+                        <a href="sign-in.html" class="sign" >SIGN IN</a>
                         <a href="sign-up.html" class="active">REGISTER</a>
                     </div>
                     <div>
-                        <label>Name *</label>
-                        <input name="Name" type="text" placeholder="Rahma Mohamed" onfocus="clearM(0)">
+                        <label for="name">*Name:</label>
+                        <input id="name" name="Name" type="text" placeholder="Rahma Mohamed" onfocus="clearM(0)" onblur="Name()">
                         <h6 class="error"></h6>
                         <!-- <h6 class="success"></h6> -->
                     </div>
                     <div>
-                        <label>EMAIL *</label>
-                        <input name="Email" type="text" placeholder="ancientheritage@gmail.com" onfocus="clearM(1)">
+                        <label for="e">*EMAIL:</label>
+                        <input id="e" name="Email" type="text" placeholder="ancientheritage@gmail.com" onfocus="clearM(1)" onblur="Email()">
                         <h6 class="error"></h6>
                         <!-- <h6 class="success"></h6> -->
                     </div>
                     <div>
-                        <label>NATIONALITY</label>
-                        <select class="nationality" name="nationality">
+                        <label for="n">NATIONALITY:</label>
+                        <select id="n" class="nationality" name="nationality">
                             <option value="">Select your nationality</option>
                             <option value="egyptian">Egyptian</option>
                             <option value="american">American</option>
@@ -120,14 +110,14 @@
                         </select>
                     </div>
                     <div>
-                        <label>PASSWORD *</label>
-                        <input name="Password" type="password" placeholder="••••••••" onfocus="clearM(2)">
+                        <label for="p">*PASSWORD:</label>
+                        <input id="p" name="Password" type="password" placeholder="••••••••" onfocus="clearM(2)" onblur="password()">
                         <h6 class="error"></h6>
                         <!-- <h6 class="success"></h6> -->
                     </div>
                     <div>
-                        <label>CONFIRM PASSWORD *</label>
-                        <input name="confirmPassword" type="password" placeholder="••••••••" onfocus="clearM(3)">
+                        <label for="cp">*CONFIRM PASSWORD:</label>
+                        <input id="cp" name="confirmPassword" type="password" placeholder="••••••••" onfocus="clearM(3)" onblur="cpassword()">
                         <h6 class="error"></h6>
                         <!-- <h6 class="success"></h6> -->
                     </div>

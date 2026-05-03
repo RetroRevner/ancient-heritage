@@ -1,4 +1,36 @@
 let current = null; //مكان لتخزين قيمة الصورة المضغوطة
+let cnt = document.getElementById("information-container");
+let iframe = document.getElementById("map-iframe");
+const sounds = {
+    "pyramid": new Audio("../assets/audios/pyramid.MP3"),
+    "siwa": new Audio("../assets/audios/siwa.MP3"),
+    "bahariya": new Audio("../assets/audios/bahariya.MP3"),
+    "farafra": new Audio("../assets/audios/farafra.MP3"),
+    "dakhla": new Audio("../assets/audios/dakhla.MP3"),
+    "kharga": new Audio("../assets/audios/kharga.MP3"),
+    "abu-simbel": new Audio("../assets/audios/abu-simbel.MP3"),
+    "karnak": new Audio("../assets/audios/karnak.MP3")
+};
+function mapMod() {
+    let imgs = iframe.contentDocument.querySelectorAll("#icons-container img");
+    let p = iframe.contentDocument.querySelectorAll("#icons-container p");
+    let map = iframe.contentDocument.getElementById("map");
+    let btn = iframe.contentDocument.querySelectorAll("#zoom-btn button");
+    btn.forEach(e => {
+        e.classList.toggle("light");
+    });
+    cnt.classList.toggle("light");
+    map.classList.toggle("light");
+    imgs.forEach(e => {
+        e.classList.toggle("light");
+    })
+    p.forEach(e => {
+        e.classList.toggle("light");
+    });
+    document.getElementById("img").classList.toggle("light");
+}
+//----------------------------------------------------------------------------------------------------------------------------------
+
 function selected(value) {
     // window.parent
     // iframeدي عشان الفانكشن بيتم استدعائها داخل الـ
@@ -15,14 +47,6 @@ function selected(value) {
     current = value; //بنعرف قيمة اخر زرار عشان لو دوسنا عليه تاني
 
     if (value == "pyramid") { //بنغير الصورة والمعلومات المعروضة على حسب القيمة المبعوتة
-        let p = document.querySelectorAll("#icons-container img");
-        p.forEach(e => {
-            if (e.id !== value) {
-                e.classList.remove("active");
-            } else {
-                e.classList.toggle("active");
-            }
-        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">The Great<br>Pyramid of Giza</p>
@@ -57,14 +81,6 @@ function selected(value) {
     }
 
     if (value == "siwa") {
-        let p = document.querySelectorAll("#icons-container img");
-        p.forEach(e => {
-            if (e.id !== value) {
-                e.classList.remove("active");
-            } else {
-                e.classList.toggle("active");
-            }
-        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">Siwa Oasis</p>
@@ -100,14 +116,6 @@ function selected(value) {
     }
 
     if (value == "bahariya") {
-        let p = document.querySelectorAll("#icons-container img");
-        p.forEach(e => {
-            if (e.id !== value) {
-                e.classList.remove("active");
-            } else {
-                e.classList.toggle("active");
-            }
-        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">Bahariya Oasis</p>
@@ -143,14 +151,6 @@ function selected(value) {
     }
 
     if (value == "farafra") {
-        let p = document.querySelectorAll("#icons-container img");
-        p.forEach(e => {
-            if (e.id !== value) {
-                e.classList.remove("active");
-            } else {
-                e.classList.toggle("active");
-            }
-        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">Farafra Oasis</p>
@@ -187,14 +187,6 @@ function selected(value) {
     }
 
     if (value == "dakhla") {
-        let p = document.querySelectorAll("#icons-container img");
-        p.forEach(e => {
-            if (e.id !== value) {
-                e.classList.remove("active");
-            } else {
-                e.classList.toggle("active");
-            }
-        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">Dakhla Oasis</p>
@@ -230,14 +222,6 @@ function selected(value) {
     }
 
     if (value == "kharga") {
-        let p = document.querySelectorAll("#icons-container img");
-        p.forEach(e => {
-            if (e.id !== value) {
-                e.classList.remove("active");
-            } else {
-                e.classList.toggle("active");
-            }
-        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">Kharga Oasis</p>
@@ -274,14 +258,6 @@ function selected(value) {
     }
 
     if (value == "abu-simbel") {
-        let p = document.querySelectorAll("#icons-container img");
-        p.forEach(e => {
-            if (e.id !== value) {
-                e.classList.remove("active");
-            } else {
-                e.classList.toggle("active");
-            }
-        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">Abu Simbel</p>
@@ -317,14 +293,6 @@ function selected(value) {
     }
 
     if (value == "karnak") {
-        let p = document.querySelectorAll("#icons-container img");
-        p.forEach(e => {
-            if (e.id !== value) {
-                e.classList.remove("active");
-            } else {
-                e.classList.toggle("active");
-            }
-        });
         infoCnt.innerHTML = `
             <p class="p1">Relic Focus</p>
             <p class="p2">El Karnak</p>
@@ -361,7 +329,47 @@ function selected(value) {
     window.parent.imageMapResize();
     //imapعشان يظبط ابعاد الـ
     //للصورة الجديدة
+
+    let p = document.querySelectorAll("#icons-container img");
+    p.forEach(e => {
+        if (e.id !== value) {
+            e.classList.remove("active");
+        } else {
+            e.classList.toggle("active");
+        }
+    });
+    if (infoCnt.classList.contains("selected") || current !== value) {
+        sounds[value].play();
+    }
 }
+
+//------------------------------------------------------------------------------------------------------------------------------
+let observer = new MutationObserver(() => {
+    if (cnt.classList.contains("light")) {
+        window.parent.document.querySelector(".p1").classList.add("light");
+        window.parent.document.querySelector(".p2").classList.add("light");
+        window.parent.document.getElementById("img").classList.add("light");
+        window.parent.document.getElementById("selected-info").classList.add("light");
+        window.parent.document.getElementById("info-p").classList.add("light");
+        document.querySelectorAll("#selected-info label").forEach(e => {
+            e.classList.add("light");
+        });
+    }
+    else {
+        window.parent.document.querySelector(".p1").classList.remove("light");
+        window.parent.document.querySelector(".p2").classList.remove("light");
+        window.parent.document.getElementById("img").classList.remove("light");
+        window.parent.document.getElementById("selected-info").classList.remove("light");
+        window.parent.document.getElementById("info-p").classList.remove("light");
+        document.querySelectorAll("#selected-info label").forEach(e => {
+            e.classList.remove("light");
+        });
+    }
+});
+observer.observe(window.parent.document.getElementById("information-container"), {
+    childList: true, attributes: true
+});
+//------------------------------------------------------------------------------------------------------------------------------
 
 const normal_scale = 1;
 const max_scale = 3;
@@ -374,8 +382,11 @@ function zoomIn() {
     // "1.5"
     // فا هي بتخلي القيمة تكون رقم
     // ممكن مع اول ضغطة مفيش قيمة تتبعت فا عملنا || 1
-    if (scale < max_scale) { //عشان ميعملش زوم اكتر من 2
+    if (scale < max_scale) { //عشان ميعملش زوم اكتر من 3
         map.style.scale = scale + add;
+    }
+    if (parseFloat(map.style.scale) > normal_scale) {
+        document.body.classList.add("grap");
     }
 }
 function zoomout() {
@@ -384,37 +395,38 @@ function zoomout() {
     if (scale > normal_scale) { //عشان ميصغرش عن 1
         map.style.scale = scale - add;
     }
+    if (parseFloat(map.style.scale) === normal_scale) {
+        document.body.classList.remove("grap");
+    }
+}
+//----------------------------------------------------------------------------------------------------------------------------------
+
+function places() {
+    if (!document.getElementById("menu-links").classList.contains("places")) {
+        document.getElementById("menu-links").classList.toggle("places");
+        document.getElementById("places").classList.toggle("selected");
+        document.getElementById("map").classList.toggle("selected");
+    }
 }
 
-function mapMod() {
-    let iframe = document.getElementById("map-iframe");
-    let imgs = iframe.contentDocument.querySelectorAll("#icons-container img");
-    let changer = document.querySelector(".mode-cnt");
-    if (!changer.classList.contains("light")) {
-        imgs.forEach(e => {
-            let currentOp = window.getComputedStyle(e).opacity;
-            if (currentOp === "1") {
-                e.style.opacity = "0";
-            }
-            else {
-                e.style.opacity = "1";
-            }
+function map() {
+    if (document.getElementById("menu-links").classList.contains("places")) {
+        document.getElementById("menu-links").classList.toggle("places");
+        document.getElementById("places").classList.toggle("selected");
+        document.getElementById("map").classList.toggle("selected");
+    }
+}
 
-        })
-        iframe.contentDocument.getElementById("map-dark").style.opacity = "1";
-        iframe.contentDocument.getElementById("map-light").style.opacity = "0";
+iframe.onload = () => {
+    if (cnt.classList.contains("light")) {
+        let currentMap = localStorage.setItem("mapMod", "light");
     }
     else {
-        imgs.forEach(e => {
-            let currentOp = window.getComputedStyle(e).opacity
-            if (currentOp === "0") {
-                e.style.opacity = "1";
-            }
-            else {
-                e.style.opacity = "0";
-            }
-        })
-        iframe.contentDocument.getElementById("map-dark").style.opacity = "0";
-        iframe.contentDocument.getElementById("map-light").style.opacity = "1";
+        let currentMap = localStorage.setItem("mapMod", "dark");
+    }
+    let savedMap = localStorage.getItem("mapMod");
+    let savedMod = localStorage.getItem("theme");
+    if (savedMap !== savedMod) {
+        mapMod();
     }
 }

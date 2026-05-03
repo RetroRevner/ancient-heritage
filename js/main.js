@@ -1,10 +1,12 @@
-
-let user = JSON.parse(localStorage.getItem("user"));
+let log = localStorage.getItem("log");
 let Button = document.getElementById("sign-btn");
 let Icon = document.getElementById("icon");
-if (user) {
+if (log === "loged") {
     Icon.style.display = "block";
     Button.style.display = "none";
+} else {
+    Icon.style.display = "none";
+    Button.style.display = "block";
 }
 
 function changeMod() {
@@ -44,6 +46,11 @@ function changeMod() {
     } else {
         localStorage.setItem("theme", "dark");
     }
+}
+if (document.querySelector(".span1").classList.contains("light")) {
+    localStorage.setItem("theme", "light");
+} else {
+    localStorage.setItem("theme", "dark");
 }
 let saved = localStorage.getItem("theme");
 if (saved === "light") {

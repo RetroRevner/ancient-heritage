@@ -11,21 +11,13 @@
 
 :root {
     --navBar-color-dark: #131313e6;
-    /* --navBar-color-light: #fef8efe6; */
     --background-dark: #0a0a0a;
-    /* --background-light: #f8f2ea; */
     --golden-color: #e7c075;
     --golden-hover-color: #bb954f;
     --golden-btn-text-color: #432f01;
     --text-dark: #a4a2a8;
-    /* --text-light: #4e4635; */
     --active-text: #987822;
-    /* --big-text-light: #2b240a; */
     --small-text-dark: #b5aa9b;
-    /* --footer-light: #e8d9ac;
-    --button-light: #765700;
-    --container-color-light: #fdedbf;
-    --container-second-light: #383010; */
  /*بني*/
    --navBar-color-light: rgb(242, 237, 228 , 0.8);
     --background-light: #f2ede4; 
@@ -180,7 +172,7 @@ body.light {
 .nav-bar {
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -281,6 +273,11 @@ body.light {
 .nav-bar .sign-btn:hover {
     background-color: var(--golden-hover-color);
     color: var(--golden-btn-text-color);
+}
+
+.nav-bar .sign-btn.light:hover {
+    background-color: var(--button-hover-light);
+    color: white;
 }
 
 main {

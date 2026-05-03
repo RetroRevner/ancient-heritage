@@ -90,20 +90,20 @@
             </section>
             <section class="left">
                 <form class="sign-in" name="signIn" method="post" onsubmit="dataForm(event)">
-                    <h6 class="success"></h6>
+                    <h6 class="errorS"></h6>
                     <div class="form-link">
                         <a href="sign-in.html" class="active">SIGN IN</a>
-                        <a href="sign-up.html">REGISTER</a>
+                        <a href="sign-up.html" class="sign">REGISTER</a>
                     </div>
                     <div>
-                        <label>EMAIL</label>
-                        <input type="text" name="Email" placeholder="ancientheritage@gmail.com" onfocus="clearM(0)">
+                        <label for="e">EMAIL:</label>
+                        <input id="e" type="text" name="Email" placeholder="ancientheritage@gmail.com" onfocus="clearM(0)" onblur="email()">
                         <h6 class="error"></h6>
                         <!-- <h6 class="success"></h6> -->
                     </div>
                     <div>
-                        <label>PASSWORD</label>
-                        <input type="password" name="Password" placeholder="••••••••" onfocus="clearM(1)">
+                        <label for="p">PASSWORD:</label>
+                        <input id="p" type="password" name="Password" placeholder="••••••••" onfocus="clearM(1)" onblur="password()">
                         <h6 class="error"></h6>
                         <!-- <h6 class="success"></h6> -->
                     </div>

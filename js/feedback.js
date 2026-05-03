@@ -72,12 +72,29 @@ function clearT() {
     errorT.innerText = "";
 }
 
-let left = document.querySelector(".left");
 function feedMod(){
-   left.classList.toggle("light");
+   const elementsToToggle = [
+        ".a", ".miniTitle", "h1 span", "h1", ".line", 
+        ".description", ".head-contact", ".main-contact", "li", 
+        ".left", "button"
+   ];
+
+   elementsToToggle.forEach(selector => {
+        const allElements = document.querySelectorAll(selector);
+        allElements.forEach(el => {
+            el.classList.toggle("light");
+        });
+    });
+
+   const groups = [ "div label", "div input", "div select", "div textarea", ".feed-back P", "div option"];
+    groups.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+            el.classList.toggle("light");
+        });
+    });
 
 }
-if (left.classList.contains("light")) {
+if (document.querySelector(".a").classList.contains("light")) {
    let currentfeed = localStorage.setItem("feedMod", "light");
 }
 else {

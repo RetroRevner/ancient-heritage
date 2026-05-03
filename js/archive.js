@@ -458,8 +458,8 @@ for (let i of archiveData) {//لوب عادية
     let removeIcon = document.createElement("i");
     removeIcon.classList.add("fa-solid", "fa-trash", "remove-icon");
     removeIcon.style.cursor = "pointer"; //
-    removeIcon.style.color = "black";
 
+    
     removeIcon.onclick = () => {
         removeFromLocal("archive", i.id);
         card.remove();

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <nav class="nav-bar">
+        <nav class="nav-bar">
         <div class="nav-text">
             ANCIENT HERITAGE
         </div>
@@ -24,9 +24,46 @@
                 <a href="map.html">Map</a>
                 <a href="search.html">Search</a>
             </div>
+            <div class="mode-cnt" onclick="changeMod(); T_PMod()">
+                <span class="span1">
+                    <svg class="sun" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon" viewBox="0 0 24 24">
+                        <path
+                            d="M18 15.63c-.977.52-1.945.481-3.13.481A6.981 6.981 0 0 1 7.89 9.13c0-1.185-.04-2.153.481-3.13C6.166 7.174 5 9.347 5 12.018A6.981 6.981 0 0 0 11.982 19c2.67 0 4.844-1.166 6.018-3.37ZM16 5c0 2.08-.96 4-3 4 2.04 0 3 .92 3 3 0-2.08.96-3 3-3-2.04 0-3-1.92-3-4Z" />
+                    </svg>
+                </span>
+                <span class="span2">
+                    <svg class="moon2" viewBox="0 0 24 24">
+                        <path
+                            d="M18 15.63c-.977.52-1.945.481-3.13.481A6.981 6.981 0 0 1 7.89 9.13c0-1.185-.04-2.153.481-3.13C6.166 7.174 5 9.347 5 12.018A6.981 6.981 0 0 0 11.982 19c2.67 0 4.844-1.166 6.018-3.37ZM16 5c0 2.08-.96 4-3 4 2.04 0 3 .92 3 3 0-2.08.96-3 3-3-2.04 0-3-1.92-3-4Z" />
+                    </svg>
+                    <svg class="sun2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </span>
+            </div>
         </div>
         <div class="sign">
-            <a class="sign-btn" href="sign-up.html">Sign up</a>
+            <a class="sign-btn" id="sign-btn" href="sign-up.html">Sign up</a>
+             <a id="icon" class="icon" href="profile.html" style="display: none;"><i class="fa-solid fa-circle-user"></i></a>
         </div>
     </nav>
     <main class="background">
@@ -100,7 +137,7 @@
         </div>
     </footer>
     <script src="../js/main.js"></script>
-
+    <script src="../js/T&P.js"></script>
 </body>
 
 </html>
