@@ -1,5 +1,5 @@
 
-let user = JSON.parse(localStorage.getItem("user"));
+let user = JSON.parse(localStorage.getItem("user2"));
 let Button = document.getElementById("sign-btn");
 let Icon = document.getElementById("icon");
 if (user && user.flagValue) {

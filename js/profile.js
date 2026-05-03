@@ -1,9 +1,9 @@
 let storeData = localStorage.getItem("user")
 let userData = JSON.parse(storeData);
 
-if (userData.userData.Name) {
-    document.getElementById("userName").innerText = "Hello " + userData.userData.Name;
-    document.getElementById("userEmail").innerText = userData.userData.Email;
+if (userData.Name) {
+    document.getElementById("userName").innerText = "Hello " + userData.Name;
+    document.getElementById("userEmail").innerText = userData.Email;
 }
 
 function removeFromLocal(key, id) {
@@ -172,7 +172,7 @@ function pop() {
         localStorage.removeItem("favorite");
         window.location.href = "../index.html";
         let log = { userData, flagValue: "signedOut" };
-        localStorage.setItem('user', JSON.stringify(log));
+        localStorage.setItem('user2', JSON.stringify(log));
     };
 
 }
