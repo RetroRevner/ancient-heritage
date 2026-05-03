@@ -66,7 +66,7 @@ function dataForm(event) {
     if ((userData.Email == emailV) && (userData.Password == passwordV)) {
       setTimeout(() => {
         window.location.href = "../pages/profile.html";
-        localStorage.removeItem("log");
+        localStorage.setItem("log","loged");
       }, 300);
     }
     else {

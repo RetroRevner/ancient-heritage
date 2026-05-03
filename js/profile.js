@@ -171,8 +171,7 @@ function pop() {
         Button.style.display = "block";
         localStorage.removeItem("favorite");
         window.location.href = "../index.html";
-        let log = "signedOut" ;
-        localStorage.setItem('log', JSON.stringify(log));
+        localStorage.removeItem("log");
     };
 
 }

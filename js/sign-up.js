@@ -114,7 +114,7 @@ function dataForm(event) {
     localStorage.setItem("user", JSON.stringify(dateOfUser));
     setTimeout(() => {
       window.location.href = "../pages/profile.html";
-      localStorage.removeItem("log");
+      localStorage.setItem("log", "loged");
     }, 300);
   }
 
