@@ -453,7 +453,7 @@ for (let i of products.data) {//لوب عادية
 
     let iconBox = document.createElement("div")
     iconBox.classList.add("icon-box")
-
+    
     let archiveIcon = document.createElement("i")
     archiveIcon.classList.add("fa-solid", "fa-box-archive", "archive-icon")//icon from FontAwsome.com
     if (isItemInStorage("archive", i.id)) {//لو الاي دي جوا الليست في اللوكال هتحليها لونها احمر
@@ -550,8 +550,16 @@ document.getElementById("search").addEventListener("click", () => {
     let search = document.getElementById("search-input").value
     let cards = document.querySelectorAll(".card")
     let names = document.querySelectorAll(".artifact-name")
+    let museums = document.querySelectorAll(".artifacte-subtitle")
     names.forEach((name, index) => {
         if (name.innerText.includes(search.toUpperCase()))//هل البحث جواه حروف من اسم اثر معين
+            cards[index].classList.remove("hide")
+        else
+            cards[index].classList.add("hide")
+        
+    })
+    museums.forEach((museum, index) => {
+        if (museum.innerText.includes(search.toUpperCase()))//هل البحث جواه حروف من اسم اثر معين
             cards[index].classList.remove("hide")
         else
             cards[index].classList.add("hide")

@@ -1,5 +1,6 @@
 let storeData = localStorage.getItem("user")
  let userData = JSON.parse(storeData);
+console.log(userData.userData)
 
  function email (event){
    let emailV =  document.forms["signIn"]["Email"].value;
@@ -62,7 +63,7 @@ let storeData = localStorage.getItem("user")
           notFound.innerText = "No account found. Please sign up first.";
           notFound.style.color = "rgb(182, 28, 28)" ;
         }
-      if((userData.Email == emailV) && (userData.Password == passwordV) ){
+      if((userData.userData.Email == emailV) && (userData.userData.Password == passwordV) ){
         setTimeout(() => {
         window.location.href = "../pages/profile.html";
         }, 3000);

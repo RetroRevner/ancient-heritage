@@ -2,10 +2,10 @@
 let user = JSON.parse(localStorage.getItem("user"));
 let Button = document.getElementById("sign-btn");
 let Icon = document.getElementById("icon");
-if(user && user.flagValue){
+if (user && user.flagValue) {
     Icon.style.display = "none";
     Button.style.display = "block";
-}else{
+} else if (user) {
     Icon.style.display = "block";
     Button.style.display = "none";
 }
