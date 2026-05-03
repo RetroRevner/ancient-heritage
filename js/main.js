@@ -1,11 +1,10 @@
-
-let user = JSON.parse(localStorage.getItem("user2"));
+let log = JSON.parse(localStorage.getItem("log"));
 let Button = document.getElementById("sign-btn");
 let Icon = document.getElementById("icon");
-if (user && user.flagValue) {
+if (log) {
     Icon.style.display = "none";
     Button.style.display = "block";
-} else if (user) {
+} else {
     Icon.style.display = "block";
     Button.style.display = "none";
 }
@@ -47,6 +46,11 @@ function changeMod() {
     } else {
         localStorage.setItem("theme", "dark");
     }
+}
+if (document.querySelector(".span1").classList.contains("light")) {
+    localStorage.setItem("theme", "light");
+} else {
+    localStorage.setItem("theme", "dark");
 }
 let saved = localStorage.getItem("theme");
 if (saved === "light") {

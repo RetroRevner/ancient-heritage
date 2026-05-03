@@ -7,21 +7,22 @@
     --text-dark: #a4a2a8;
     --active-text: #987822;
     --small-text-dark: #b5aa9b;
- /*بني*/
-   --navBar-color-light: rgb(242, 237, 228 , 0.8);
-    --background-light: #f2ede4; 
-    --button-light:#937C63; 
-    --button-hover-light:#7D6852;  
-    --footer-light: #f2ede4; 
-    --container-color-card:#fcecdb;
+    /*بني*/
+    --navBar-color-light: rgb(242, 237, 228, 0.8);
+    --background-light: #f2ede4;
+    --button-light: #937C63;
+    --button-hover-light: #7D6852;
+    --footer-light: #f2ede4;
+    --container-color-card: #fcecdb;
     --container-color-light: #F9F3E5;
     --container-second-light: #383010;
-    
-  --text-light: #6B4F3A;      
-  --big-text-light: #3E2F23;
+
+    --text-light: #6B4F3A;
+    --big-text-light: #3E2F23;
 }
+
 /*-----------------------------------------------------------------------------*/
-.container-slides{
+.container-slides {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
@@ -29,27 +30,29 @@
     padding: 80px 50px;
     scroll-behavior: smooth;
 }
-.container-slides::-webkit-scrollbar{
+
+.container-slides::-webkit-scrollbar {
     display: none;
 }
-.history-container{
+
+.history-container {
     perspective: 1000px;
 }
 
-.history{
-   min-width:350px ;
+.history {
+    min-width: 350px;
     height: 400px;
     position: relative;
     transform-style: preserve-3d;
     transition: 1s;
 }
 
-.history:hover {
+.history-container:hover .history {
     transform: rotateY(180deg);
 }
 
 .back,
-.front{
+.front {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -59,50 +62,61 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     background-color: linear-gradient(rgba(0, 0, 0, 0.3));
+}
 
-}
 .back.light,
-.front.light{
-    box-shadow: 0 10px 20px  rgb(107, 79, 58 , 0.2);
+.front.light {
+    box-shadow: 0 10px 20px rgb(107, 79, 58, 0.2);
 }
-.coptic{
+
+.coptic {
     background-image: url(../assets/images/Coptic_Museum.jpeg);
     background-size: cover;
 }
-.coptic.light{
-    background-image:url(../assets/images/Coptic_Museum.jpeg);
+
+.coptic.light {
+    background-image: url(../assets/images/Coptic_Museum.jpeg);
 }
-.grand{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.3)), url(../assets/images/grand\ Egyptian\ museum.jpeg);
+
+.grand {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3)), url(../assets/images/grand\ Egyptian\ museum.jpeg);
     background-size: cover;
 }
-.grand.light{
-    background-image:url(../assets/images/grand\ Egyptian\ museum.jpeg);
+
+.grand.light {
+    background-image: url(../assets/images/grand\ Egyptian\ museum.jpeg);
 }
-.art{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.3)), url(../assets/images/islamic.jpeg);
+
+.art {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3)), url(../assets/images/islamic.jpeg);
     background-size: cover;
 }
-.art.light{
+
+.art.light {
     background-image: url(../assets/images/islamic.jpeg);
 }
-.egy{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.3)), url(../assets/images/photo_6030414167451307199_y.jpg);
+
+.egy {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3)), url(../assets/images/photo_6030414167451307199_y.jpg);
     background-size: cover;
 }
-.egy.light{
-    background-image:url(../assets/images/photo_6030414167451307199_y.jpg);
+
+.egy.light {
+    background-image: url(../assets/images/photo_6030414167451307199_y.jpg);
 }
-.nmec{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.3)), url(../assets/images/NMEC.jpeg);
+
+.nmec {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3)), url(../assets/images/NMEC.jpeg);
     background-size: cover;
 }
-.nmec.light{
-   background-image: url(../assets/images/NMEC.jpeg);
+
+.nmec.light {
+    background-image: url(../assets/images/NMEC.jpeg);
 }
-.back{
+
+.back {
     background-color: var(--navBar-color-dark);
     padding: 50px;
     transform: rotateY(180deg);
@@ -110,89 +124,109 @@
     flex-direction: column;
     gap: 20px;
 }
-.back.light{
+
+.back.light {
     background-color: var(--navBar-color-light);
 }
-.back h3{
+
+.back h3 {
     color: var(--golden-color);
     font-size: 30px;
 }
-.back h3.light{
+
+.back h3.light {
     color: var(--big-text-light);
 }
-.back p{
-   color: var(--small-text-dark);
-   font-size: 20px;
-   line-height: 1.3;
+
+.back p {
+    color: var(--small-text-dark);
+    font-size: 20px;
+    line-height: 1.3;
 }
-.back p.light{
+
+.back p.light {
     color: var(--text-light);
 }
+
 /*----------------------------------------------------*/
 .feature {
-  display: flex; 
-  justify-content: center;
-  gap: 50px;
-  /* max-width: 1200px; */
-  margin: 50px 100px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    /* max-width: 1200px; */
+    margin: 50px 100px;
 }
+
 .card {
-  box-shadow: var(--golden-color) 1px 1px 1px 0px;
-  background-color: var(--navBar-color-dark);
-  padding: 40px 20px;
-  border-radius: 15px;
-  /* width: 400px;
+    box-shadow: var(--golden-color) 1px 1px 1px 0px;
+    background-color: var(--navBar-color-dark);
+    padding: 40px 20px;
+    border-radius: 15px;
+    /* width: 400px;
   max-width: 450px; */
-  transition: transform 0.3s ease;
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  align-items: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
 }
-.card.light{
+
+.card.light {
     box-shadow: var(--big-text-light) 1px 1px 1px 0px;
-     background-color: var(--navBar-color-light);
+    background-color: var(--navBar-color-light);
 }
+
 .card:hover {
-  transform: translateY(-15px);
-  box-shadow: var(--golden-color) 1px 2px 8px 0px;
+    transform: translateY(-15px);
+    box-shadow: var(--golden-color) 1px 2px 8px 0px;
 }
-.card.light:hover{
+
+.card.light:hover {
     box-shadow: var(--big-text-light) 1px 2px 8px 0px;
 }
+
 .icon {
     text-align: center;
-    font-size:40px;
-    color:var(--golden-color);
+    font-size: 40px;
+    color: var(--golden-color);
 }
-.icon.light{
+
+.icon.light {
     color: var(--big-text-light);
 }
+
 .titleFeatures {
-  font-size: 40px;
-  text-align: center;
-  color: var(--small-text-dark);
-  font-family: mainFont;
+    font-size: 40px;
+    text-align: center;
+    color: var(--small-text-dark);
+    font-family: mainFont;
 }
-.titleFeatures.light{
-    color:var(--big-text-light)
+
+.titleFeatures.light {
+    color: var(--big-text-light)
 }
+
 .titleCard {
-  font-size: 25px;
-  color: var(--small-text-dark);
-  text-align: center;
-  font-family: mainFont;
+    font-size: 25px;
+    color: var(--small-text-dark);
+    text-align: center;
+    font-family: mainFont;
 }
-.titleCard.light{
-    color:var(--big-text-light)
+
+.titleCard.light {
+    color: var(--big-text-light)
 }
+
 .describtion3 {
-  font-size: 20px;
-  color: var(--small-text-dark);
-  text-align: center;
-   font-family: mainFont;
+    font-size: 20px;
+    color: var(--small-text-dark);
+    text-align: center;
+    font-family: mainFont;
 }
-.describtion3.light{
+
+.describtion3.light {
     color: var(--text-light);
 }
+
 /*-------------------------------------------------------------------*/

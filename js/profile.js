@@ -171,8 +171,8 @@ function pop() {
         Button.style.display = "block";
         localStorage.removeItem("favorite");
         window.location.href = "../index.html";
-        let log = { userData, flagValue: "signedOut" };
-        localStorage.setItem('user2', JSON.stringify(log));
+        let log = "signedOut" ;
+        localStorage.setItem('log', JSON.stringify(log));
     };
 
 }

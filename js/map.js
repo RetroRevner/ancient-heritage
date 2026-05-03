@@ -352,8 +352,8 @@ let observer = new MutationObserver(() => {
         window.parent.document.getElementById("selected-info").classList.add("light");
         window.parent.document.getElementById("info-p").classList.add("light");
         document.querySelectorAll("#selected-info label").forEach(e => {
-        e.classList.add("light");
-    });
+            e.classList.add("light");
+        });
     }
     else {
         window.parent.document.querySelector(".p1").classList.remove("light");
@@ -362,8 +362,8 @@ let observer = new MutationObserver(() => {
         window.parent.document.getElementById("selected-info").classList.remove("light");
         window.parent.document.getElementById("info-p").classList.remove("light");
         document.querySelectorAll("#selected-info label").forEach(e => {
-        e.classList.remove("light");
-    });
+            e.classList.remove("light");
+        });
     }
 });
 observer.observe(window.parent.document.getElementById("information-container"), {
@@ -400,6 +400,22 @@ function zoomout() {
     }
 }
 //----------------------------------------------------------------------------------------------------------------------------------
+
+function places() {
+    if (!document.getElementById("menu-links").classList.contains("places")) {
+        document.getElementById("menu-links").classList.toggle("places");
+        document.getElementById("places").classList.toggle("selected");
+        document.getElementById("map").classList.toggle("selected");
+    }
+}
+
+function map() {
+    if (document.getElementById("menu-links").classList.contains("places")) {
+        document.getElementById("menu-links").classList.toggle("places");
+        document.getElementById("places").classList.toggle("selected");
+        document.getElementById("map").classList.toggle("selected");
+    }
+}
 
 iframe.onload = () => {
     if (cnt.classList.contains("light")) {

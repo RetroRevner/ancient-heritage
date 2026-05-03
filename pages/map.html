@@ -7,6 +7,8 @@
     <title>Ancient Heritage | Map</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/map.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://kit.fontawesome.com/728f1f9039.js" crossorigin="anonymous"></script>
 
 </head>
@@ -67,6 +69,36 @@
         </div>
     </nav>
     <main>
+        <div id="menu">
+            <svg viewBox="0 -960 960 960" id="menu-icon">
+                <path
+                    d="M190-99q-37.18 0-64.09-26.91Q99-152.82 99-190v-580q0-37.59 26.91-64.79Q152.82-862 190-862h580q37.59 0 64.79 27.21Q862-807.59 862-770v580q0 37.18-27.21 64.09Q807.59-99 770-99H190Zm0-91h342v-580H190v580Zm580 0v-580H589v580h181Z" />
+            </svg>
+            <div id="menu-links">
+                <div id="map" class="selected" onclick="map()">
+                    <svg viewBox="0 -960 960 960">
+                        <path
+                            d="m612-98-262-92-168 68q-30 14-56.5-3.5T99-177v-551q0-22 11.5-38.5T143-790l207-72 262 92 167-68q29-14 56.5 3.5T863-784v559q0 21-13 35t-31 19L612-98Zm-32-108v-483l-199-67v483l199 67Z" />
+                    </svg>
+                    <svg viewBox="0 -960 960 960" class="selected-map">
+                        <path
+                            d="m608-120-255.33-90-181.34 71.33q-18 8.67-34.66-2.16Q120-151.67 120-172v-558.67q0-13 7.5-23t19.83-15L352.67-840 608-750.67 788.67-822q18-8 34.66 2.5Q840-809 840-788.67v563.34q0 11.66-7.5 20.33-7.5 8.67-19.17 13L608-120Zm-36-82.67v-492.66L388-758v492.67l184 62.66Zm66.67 0 134.66-44.66v-499.34l-134.66 51.34v492.66Zm-452-11.33 134.66-51.33V-758l-134.66 44.67V-214Zm452-481.33v492.66-492.66ZM321.33-758v492.67V-758Z" />
+                    </svg>
+                    <p>Map</p>
+                </div>
+                <div id="places" onclick="places()">
+                    <svg viewBox="0 -960 960 960">
+                        <path
+                            d="M80-80v-60h83v-411H80v-47l400-282 400 282v47h-82v411h82v60H80Zm143-60h515-515Zm101-101h60v-184l96 145 97-145v184h60v-274h-65l-92 140-92-140h-64v274Zm414 101v-485L480-806 223-625v485h515Z" />
+                    </svg>
+                    <svg viewBox="0 -960 960 960" class="selected-places">
+                        <path
+                            d="M80-80v-66.67h82v-394H80v-58L480-880l400 281.33v58h-81.33v394H880V-80H80Zm242.67-160.67h66.66v-176L480-280l91.33-136.67v176H638v-276h-70l-88 133.34-88-133.34h-69.33v276Z" />
+                    </svg>
+                    <p>Places</p>
+                </div>
+            </div>
+        </div>
         <div id="map-main">
             <div id="map-container">
                 <iframe src="map-iframe.html" id="map-iframe" draggable="false" allow="autoplay"></iframe>
@@ -101,6 +133,7 @@
     <script>
         imageMapResize(); //بنستدعي الفانكشن من المكتبة
     </script>
+
 </body>
 
 </html>

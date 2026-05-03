@@ -66,14 +66,15 @@ function dataForm(event) {
     if ((userData.Email == emailV) && (userData.Password == passwordV)) {
       setTimeout(() => {
         window.location.href = "../pages/profile.html";
-      }, 3000);
+        localStorage.removeItem("log");
+      }, 300);
     }
     else {
       notFound.innerText = "No account found. Please sign up first.";
       notFound.style.color = "rgb(182, 28, 28)";
       setTimeout(() => {
         window.location.href = "../pages/sign-up.html";
-      }, 3000);
+      }, 300);
     }
 
   }
