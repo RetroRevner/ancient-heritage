@@ -33,7 +33,6 @@
 .header, .join-us {
     position: relative;
     z-index: 10;
-    /* عشان يظهر فوق الـ shadow */
     font-family: mainFont;
     padding: 40px 60px;
 }
@@ -76,17 +75,12 @@
 
 .team-grid {
     max-width: 100%;
-    /*اختياري: لضبط العرض الأقصى*/
     width: 100%;
     box-sizing: border-box;
     display: grid !important;
     gap: 20px;
-    /*إجبار النظام على استخدام الجريد*/
     grid-template-columns: repeat(12, 1fr);
-    /*بنقول للمتصفح اعمل 4 أعمدة، وكل عمود ياخد مساحة متساوية*/
     padding: 0px 40px;
-    /*الهوامش المحيطة بالشبكة*/
-    /* margin: 0 auto;*/
 }
 
 .item2 {
@@ -99,14 +93,11 @@
 
 .team-cards {
     width: 100% !important;
-    /*خليه يملأ العمود المخصص له فقط*/
     display: flex;
-    /*box-sizing: border-box;/*بيضمن ان ال padding ميزودش حجم الصورة*/
     text-align: center;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    /*أي حاجة تخرج بره حدود الكارت (زي صورة كبيرة) تختفي*/
     margin: 50px 0;
     z-index: 11;
 
@@ -116,30 +107,22 @@
     transition: 0.5s ease;
     border: 1px solid rgba(197, 163, 104, 0.2);
     width: 20vw;
-    /*الحاوية تاخد عرض الكارت*/
     position: relative;
     aspect-ratio: 3/4;
-    /*تثبيت الطول بالنسبة للعرض عشان الصور كلها تبقي مقاس واحد*/
     overflow: hidden;
-    /* اي زيادة في الصورة يتم قصها*/
     background-color: #000;
-    /* placeholder color for images */
     margin-bottom: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* subtle border for better visibility on dark background */
 }
 
 .image-card img {
-    width: 100% !important;
-    /* ensure the image fills the card */
+    width: 100% !important; 
     height: 100% !important;
     object-fit: cover !important;
-    /*بتملا المكان بدون ما تمط الصورة*/
     opacity: 0.7;
     display: block;
     transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     filter: grayscale(100%) sepia(20%) contrast(1.2);
-    /* تأثير اثري : ابيض  و اسود + تباين عالي */
 }
 
 .team-cards img:hover {
@@ -176,8 +159,6 @@
     color: var(--golden-hover-color);
     letter-spacing: 1px;
 }
-
-/* join us part*/
 .join-us {
     position: relative;
     z-index: 10;
@@ -214,49 +195,32 @@
 .description-text {
     color: var(--small-text-dark) !important;
     transition: 0.4s;
-    /* لون النص الهادئ */
     font-size: 19px;
     line-height: 1.8;
     max-width: 700px;
-    /* تضييق عرض النص حتى ينزل لسطر جديد بشكل جمالي */
     margin: 0 auto 50px;
-    /* توسيط النص وإضافة مسافة من الأسفل للزر */
 }
-
 .highlight {
     color: var(--golden-color);
-    /*لون النص اللي عامله highlight*/
     font-weight: bold;
 }
-
 .join-btn {
     background-color: transparent;
-    /* خلفية شفافة */
     border: 1px solid var(--golden-color);
-    /* إطار ذهبي رفيع */
     color: var(--golden-color);
-    /* لون النص ذهبي */
     padding: 16px 40px;
     font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
     cursor: pointer;
     font-family: mainFont;
-    /* استخدام الخط الأساسي للزر */
     transition: all 0.4s ease;
 }
-
 .join-btn:hover {
     background-color: var(--golden-color);
-    /* الخلفية تصبح ذهبية بالكامل عند الهوفر */
     color: #000000;
-    /* لون النص يصبح أسود (لون الـ Background الأصلي) */
     box-shadow: 0 0 15px rgba(231, 192, 117, 0.3);
-    /* توهج خفيف */
 }
-
-/*Responsive*/
-/*التابلت: صورتين في السطر*/
 @media (max-width: 1024px) {
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -276,68 +240,54 @@
         padding: 80px 5%;
     }
 }
-
-/*الموبايل: صورة واحدة في السطر*/
 @media (max-width: 600px) {
     .team-grid {
         grid-template-columns: 1fr;
         padding: 40px 20px;
-        /*بقلل الجوانب (الهوامش ) شوية*/
     }
 
     .header h1 {
         font-size: 40px;
     }
 }
-
 body.light {
     background-color: var(--background-light) !important;
 }
-
+body.light .subtitle{
+    color: var(--active-text)!important;
+}
 body.light .header h1, body.light .team-cards h3, body.light .box h2 {
-    /*بتغير لون العناوين للون غامق عشان يبان في ل light theme*/
     color: var(--big-text-light) !important;
 }
-
+body.light .highlight{
+    color: var(--active-text) !important;
+}
 body.light .description, body.light .description-text, body.light .team-cards .work {
-    /*بتغير لون النصوص بتاعت ال description*/
     color: var(--text-light) !important;
 }
-
 body.light .image-card {
-    /* شكل الكروت في ال light theme*/
     background-color: var(--container-color-light);
     border-color: rgba(0, 0, 0, 0.1);
 }
-
 body.light .team-link {
-    /*لون الينك بتاع صفحة ال linkedin*/
+    color: var(--button-light) !important;
+}
+body.light .shadow {
+    background: radial-gradient(circle, transparent 30%, rgba(78, 70, 53, 0.15)) !important;
+}
+body.light .image-card img {
+    filter: grayscale(0%) contrast(1);
+    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+body.light .team-cards img:hover {
+    filter: grayscale(100%) contrast(1.2);
+    transform: scale(1.05);
+}
+body.light .join-btn{
+    border: 1px solid var(--button-light) ;
     color: var(--button-light) !important;
 }
 
-body.light .shadow {
-    /* عدلت الظل عشان يبقي متناسق مع لون الخلفية*/
-    background: radial-gradient(circle, transparent 30%, rgba(78, 70, 53, 0.15)) !important;
-}
-
-/*الجزء دة خاص بأن الصورة تبقي الوان في اال light و تتحول الي darkلما اقف عليها */
-body.light .image-card img {
-    /* هنا عشان الصورة تظهر الوان*/
-    filter: grayscale(0%) contrast(1);
-    /* التأثير دة هو اللي بيخليلي الصورة بألوانها الاصلية*/
-    opacity: 1;
-    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-body.light .team-cards img:hover {
-    /* هنا عشان احول الصور الي ابيض و اسود*/
-    filter: grayscale(100%) contrast(1.2);
-    /* دة اللي بيديني تأثير الابيض و الاسود لما اقف علي اصورة*/
-    transform: scale(1.05);
-    /* الخاصية دي بتخلي الصورة تكبر شوية لما اقف عليها*/
-}
-
-/*شكل ال footer في ال light*/
 body.light .footer {
     background-color: var(--footer-light) !important;
     color: var(--big-text-light) !important;
