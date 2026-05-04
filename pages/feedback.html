@@ -93,8 +93,8 @@
                 </div>
             </section>
             <section class="left">
-                <form action="https://formspree.io/f/mzdozlgk" class="feed-back" method="POST">
-                    <!-- <h6 class="success"></h6> -->
+                <form name="feedback" class="feed-back" method="post" onsubmit="dataForm(event)">
+                <!-- <h6 class="success"></h6> -->
                     <div>
                        <label for="n" >Name:</label>
                        <input id="n" name="Name" type="text" placeholder="John Yasser" onfocus="clearM(0)" >
